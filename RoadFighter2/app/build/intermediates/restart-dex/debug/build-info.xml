@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    api-level="24"
+    density="420dpi"
+    format="8"
+    plugin-version="2.2.0"
+    timestamp="2684897814755"
+    token="4017119795510545119"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <build
+        timestamp="2467991689689"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/neewy/Documents/MSIT-SE/Models/final/RoadFighter2/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="2684897814755"
+        verifier="COLD_SWAP_REQUESTED" />
+
+</instant-run>

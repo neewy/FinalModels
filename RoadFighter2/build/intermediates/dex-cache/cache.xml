@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/neewy/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/neewy/Documents/MSIT-SE/Models/final/RoadFighter2/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0_86864258225bb5d77acbf59082e92ed9a4638cd2.jar" />
+    </item>
+
+</items>
