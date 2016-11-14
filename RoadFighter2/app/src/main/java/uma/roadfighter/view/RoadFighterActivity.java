@@ -1,6 +1,7 @@
 package uma.roadfighter.view;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -11,20 +12,24 @@ import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import uma.roadfighter.R;
 
-import static uma.roadfighter.view.RotateDirection.IDLE;
-import static uma.roadfighter.view.RotateDirection.LEFT;
-import static uma.roadfighter.view.RotateDirection.RIGHT;
+import static uma.roadfighter.view.Direction.DOWN;
+import static uma.roadfighter.view.Direction.IDLE;
+import static uma.roadfighter.view.Direction.LEFT;
+import static uma.roadfighter.view.Direction.RIGHT;
+import static uma.roadfighter.view.Direction.UP;
 
 public class RoadFighterActivity extends Activity implements SensorEventListener {
-    /**
-     * Called when the activity is first created.
-     */
+
     public RoadFighterGLView GLView;
     private boolean isTiltChosen;
+    private TextView score;
     private SensorManager mSensorManager;
     private Sensor accelerometer;
     private Sensor magnetometer;
@@ -40,49 +45,67 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
         GLView = new RoadFighterGLView(this);
         setContentView(GLView);
 
+        addScore();
+
         if (isTiltChosen) {
             mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
             accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
-            GLView.onUpPress();
-
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    initListeners();
-                }
-            }, 100);
+            initListeners();
         } else {
             setupButtons();
         }
 
     }
 
+    private void addScore() {
+
+        RelativeLayout.LayoutParams scoreParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        scoreParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        scoreParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+
+        score = new TextView(this);
+        score.setTextColor(Color.WHITE);
+        score.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);
+
+        RelativeLayout scoreWrapper = new RelativeLayout(this);
+
+        RelativeLayout.LayoutParams scoreWrapperParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+        scoreWrapperParams.setMargins(25, 25, 25, 25);
+
+        scoreWrapper.addView(score, scoreParams);
+
+        this.addContentView(scoreWrapper, scoreWrapperParams);
+    }
+
+    public void setScore(final int scorePoints) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                score.setText("Score: " + scorePoints);
+            }
+        });
+    }
+
     private void initListeners() {
-        mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_FASTEST);
-        mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_FASTEST);
-    }
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSensorManager.registerListener(RoadFighterActivity.this, accelerometer, SensorManager.SENSOR_DELAY_FASTEST);
+                mSensorManager.registerListener(RoadFighterActivity.this, magnetometer, SensorManager.SENSOR_DELAY_FASTEST);
+            }
+        }, 100);
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        GLView.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        GLView.onResume();
     }
 
     private void setupButtons() {
         RelativeLayout buttonControls = new RelativeLayout(this);
 
         RelativeLayout.LayoutParams buttonsParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-        buttonsParams.setMargins(25, 0, 25, 25);
+        buttonsParams.setMargins(25, 25, 25, 25);
 
         RelativeLayout.LayoutParams leftButtonParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         leftButtonParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
@@ -96,20 +119,99 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
         rightButtonParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         rightButtonParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
 
+        RadioGroup gearGroup = new RadioGroup(this);
+
+        RadioGroup.LayoutParams params
+                = new RadioGroup.LayoutParams(this, null);
+        params.setMargins(10, 10, 10, 10);
+
+        RadioButton brake = new RadioButton(this);
+        RadioButton slowSpeed = new RadioButton(this);
+        RadioButton fastSpeed = new RadioButton(this);
+
+        brake.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        slowSpeed.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        fastSpeed.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+        brake.setLayoutParams(params);
+        slowSpeed.setLayoutParams(params);
+        fastSpeed.setLayoutParams(params);
+
+        brake.setBackgroundResource(R.drawable.button_states);
+        slowSpeed.setBackgroundResource(R.drawable.button_states);
+        fastSpeed.setBackgroundResource(R.drawable.button_states);
+
+        brake.setButtonDrawable(android.R.color.transparent);
+        slowSpeed.setButtonDrawable(android.R.color.transparent);
+        fastSpeed.setButtonDrawable(android.R.color.transparent);
+
+        brake.setText("STOP");
+        slowSpeed.setText("SLOW");
+        fastSpeed.setText("FAST");
+
+        brake.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+        slowSpeed.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+        fastSpeed.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+
+        gearGroup.addView(fastSpeed);
+        gearGroup.addView(slowSpeed);
+        gearGroup.addView(brake);
+
+        brake.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    GLView.onBreakPress();
+                    return true;
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    GLView.onRelease();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        slowSpeed.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    GLView.onSlowPress();
+                    return true;
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    GLView.onRelease();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
+        fastSpeed.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    GLView.onFastPress();
+                    return true;
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    GLView.onRelease();
+                    return true;
+                }
+                return false;
+            }
+        });
+
         Button left = new Button(this);
         left.setText("←");
+        left.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         left.setBackgroundResource(R.drawable.button_states);
         left.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
 
         Button right = new Button(this);
         right.setText("→");
+        right.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         right.setBackgroundResource(R.drawable.button_states);
         right.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
 
-        Button up = new Button(this);
-        up.setText("↑");
-        up.setBackgroundResource(R.drawable.button_states);
-        up.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
 
         left.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -140,32 +242,21 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
             }
         });
 
-        up.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    GLView.onUpPress();
-                    return true;
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    GLView.onRelease();
-                    return true;
-                }
-                return false;
-            }
-        });
+
+        left.setLayoutParams(params);
+        right.setLayoutParams(params);
 
         buttonControls.addView(left, leftButtonParams);
-        buttonControls.addView(up, upButtonParams);
+        buttonControls.addView(gearGroup, upButtonParams);
         buttonControls.addView(right, rightButtonParams);
+
+        buttonControls.setAlpha(0.3f);
 
         this.addContentView(buttonControls, buttonsParams);
     }
 
-
-    float[] inclineGravity = new float[3];
     float[] mGravity;
     float[] mGeomagnetic;
-    float orientation[] = new float[3];
     float pitch;
     float roll;
 
@@ -177,16 +268,29 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
         } else if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
             mGeomagnetic = event.values;
 
-            switch (getRotateDirection()) {
-                case RIGHT:
-                    GLView.onRightPress();
-                    break;
-                case LEFT:
-                    GLView.onLeftPress();
-                    break;
-                case IDLE:
-                    GLView.onRelease();
-                    break;
+            Direction[] currentPosition = getRotateDirection();
+
+            if (currentPosition[0] != null && currentPosition[1] != null)  {
+                switch (currentPosition[0]) {
+                    case UP:
+                        GLView.onFastPress();
+                        break;
+                    case DOWN:
+                        GLView.onBreakPress();
+                        break;
+                }
+
+                switch (currentPosition[1]) {
+                    case RIGHT:
+                        GLView.onRightPress();
+                        break;
+                    case LEFT:
+                        GLView.onLeftPress();
+                        break;
+                    case IDLE:
+                        GLView.onRelease();
+                        break;
+                }
             }
         }
     }
@@ -196,7 +300,10 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
 
     }
 
-    public RotateDirection getRotateDirection() {
+    public Direction[] getRotateDirection() {
+
+        Direction[] result = new Direction[2];
+
         if (mGravity != null && mGeomagnetic != null) {
             float R[] = new float[9];
             float I[] = new float[9];
@@ -209,15 +316,23 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
                 pitch = orientation[1];
                 roll = orientation[2];
 
+                if (pitch > 0.35 && pitch < 1) {
+                    result[0] = UP;
+                } else if (pitch < -0.35 && pitch > -1) {
+                    result[0] = DOWN;
+                } else if (pitch > -0.35 && pitch < 0.35) {
+                    result[0] = IDLE;
+                }
+
                 if (roll > 0.25 && roll < 1) {
-                    return RIGHT;
+                    result[1] = RIGHT;
                 } else if (roll < -0.25 && roll > -1) {
-                    return LEFT;
+                    result[1] = LEFT;
                 } else if (roll > -0.25 && roll < 0.25) {
-                    return IDLE;
+                    result[1] = IDLE;
                 }
             }
         }
-        return IDLE;
+        return result;
     }
 }

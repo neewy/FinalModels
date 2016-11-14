@@ -9,7 +9,11 @@ public interface CarHandler {
 
     public void onRightPress();
 
-    public void onUpPress();
+    public void onFastPress();
+
+    public void onSlowPress();
+
+    public void onBreakPress();
 
     public void onRelease();
 }

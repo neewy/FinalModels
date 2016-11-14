@@ -17,24 +17,33 @@ public class RoadFighterGLView extends GLSurfaceView implements CarHandler {
 
     @Override
     public void onLeftPress() {
-        renderer.event = 'l';
+        renderer.setEvent('l');
     }
 
     @Override
     public void onRightPress() {
-        renderer.event = 'r';
+        renderer.setEvent('r');
     }
 
     @Override
-    public void onUpPress() {
-        renderer.event = 'h';
+    public void onFastPress() {
+        renderer.setEvent('h');
+    }
+
+    @Override
+    public void onSlowPress() {
+        renderer.setEvent('a');
+    }
+
+    @Override
+    public void onBreakPress() {
+        renderer.setEvent('n');
     }
 
     @Override
     public void onRelease() {
-        renderer.event = 'c';
+        renderer.setEvent('c');
     }
-
 
 
     //FIXME: Nestor's legacy

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background_car"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@color/blue"
+        android:src="@drawable/main_menu_car"
+        android:scaleType="fitEnd"
+        android:baselineAlignBottom="false" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:textSize="30sp"
+        android:typeface="serif"
+        android:layout_above="@+id/start_game_1"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/start_game_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FINISH GAME"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+</RelativeLayout>
