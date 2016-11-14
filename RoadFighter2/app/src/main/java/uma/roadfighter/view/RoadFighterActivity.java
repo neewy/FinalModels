@@ -29,6 +29,7 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
 
     public RoadFighterGLView GLView;
     private boolean isTiltChosen;
+    private boolean isPhoneTiltUpward = false;
     private TextView score;
     private SensorManager mSensorManager;
     private Sensor accelerometer;
@@ -273,23 +274,31 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
             if (currentPosition[0] != null && currentPosition[1] != null)  {
                 switch (currentPosition[0]) {
                     case UP:
-                        GLView.onFastPress();
+                        if (!isPhoneTiltUpward) {
+                            GLView.onFastPress();
+                            isPhoneTiltUpward = true;
+                        }
                         break;
                     case DOWN:
-                        GLView.onBreakPress();
+                        isPhoneTiltUpward = false;
+                        break;
+                    case IDLE:
+                        isPhoneTiltUpward = false;
                         break;
                 }
 
-                switch (currentPosition[1]) {
-                    case RIGHT:
-                        GLView.onRightPress();
-                        break;
-                    case LEFT:
-                        GLView.onLeftPress();
-                        break;
-                    case IDLE:
-                        GLView.onRelease();
-                        break;
+                if (!isPhoneTiltUpward) {
+                    switch (currentPosition[1]) {
+                        case RIGHT:
+                            GLView.onRightPress();
+                            break;
+                        case LEFT:
+                            GLView.onLeftPress();
+                            break;
+                        case IDLE:
+                            GLView.onRelease();
+                            break;
+                    }
                 }
             }
         }
