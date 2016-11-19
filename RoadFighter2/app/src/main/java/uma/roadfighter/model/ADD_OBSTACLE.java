@@ -1,10 +1,11 @@
-package RoadFighter_sequential; 
+package uma.roadfighter.model;
 
 import eventb_prelude.*;
 import Util.Utilities;
+import uma.roadfighter.model.*;
 
 public class ADD_OBSTACLE{
-	/*@ spec_public */ private RoadFighter machine; // reference to the machine 
+	/*@ spec_public */ private RoadFighter machine; // reference to the machine
 
 	/*@ public normal_behavior
 		requires true;

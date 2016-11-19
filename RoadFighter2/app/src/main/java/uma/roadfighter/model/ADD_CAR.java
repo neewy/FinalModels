@@ -1,4 +1,4 @@
-package RoadFighter_sequential; 
+package uma.roadfighter.model;
 
 import eventb_prelude.*;
 import Util.Utilities;

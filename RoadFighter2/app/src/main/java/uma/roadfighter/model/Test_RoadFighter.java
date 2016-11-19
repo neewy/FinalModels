@@ -1,4 +1,6 @@
-package RoadFighter_sequential;
+/*
+package uma.roadfighter.model;
+
 import java.util.Random;
 import Util.Utilities;
 import eventb_prelude.*;
@@ -17,9 +19,13 @@ public class Test_RoadFighter{
 		BSet<Integer> S =  new BSet<Integer>(
 				new Enumerated(min_integer, max_integer)
 				);
-		/** User defined code that reflects axioms and theorems: Begin **/
+		*/
+/** User defined code that reflects axioms and theorems: Begin **//*
 
-		/** User defined code that reflects axioms and theorems: End **/
+
+		*/
+/** User defined code that reflects axioms and theorems: End **//*
+
 
 		return (Integer) S.toArray()[rnd.nextInt(S.size())];
 	}
@@ -27,9 +33,13 @@ public class Test_RoadFighter{
 	public boolean GenerateRandomBoolean(){
 		boolean res = (Boolean) BOOL.instance.toArray()[rnd.nextInt(2)];
 
-		/** User defined code that reflects axioms and theorems: Begin **/
+		*/
+/** User defined code that reflects axioms and theorems: Begin **//*
 
-		/** User defined code that reflects axioms and theorems: End **/
+
+		*/
+/** User defined code that reflects axioms and theorems: End **//*
+
 
 		return res;
 	}
@@ -42,9 +52,13 @@ public class Test_RoadFighter{
 			S.add(GenerateRandomInteger());
 		}
 
-		/** User defined code that reflects axioms and theorems: Begin **/
+		*/
+/** User defined code that reflects axioms and theorems: Begin **//*
 
-		/** User defined code that reflects axioms and theorems: End **/
+
+		*/
+/** User defined code that reflects axioms and theorems: End **//*
+
 
 		return S;
 	}
@@ -58,9 +72,13 @@ public class Test_RoadFighter{
 			res = new BSet<Boolean>(true,false);
 		}
 
-		/** User defined code that reflects axioms and theorems: Begin **/
+		*/
+/** User defined code that reflects axioms and theorems: Begin **//*
 
-		/** User defined code that reflects axioms and theorems: End **/
+
+		*/
+/** User defined code that reflects axioms and theorems: End **//*
+
 
 		return res;
 	}
@@ -72,9 +90,13 @@ public class Test_RoadFighter{
 			res.add(
 					new Pair<Integer, Integer>(GenerateRandomInteger(), GenerateRandomInteger()));
 		}
-		/** User defined code that reflects axioms and theorems: Begin **/
+		*/
+/** User defined code that reflects axioms and theorems: Begin **//*
 
-		/** User defined code that reflects axioms and theorems: End **/
+
+		*/
+/** User defined code that reflects axioms and theorems: End **//*
+
 
 		return res;
 	}
@@ -82,10 +104,14 @@ public class Test_RoadFighter{
 	public static void main(String[] args){
 		Test_RoadFighter test = new Test_RoadFighter();
 
-		/** User defined code that reflects axioms and theorems: Begin **/
+		*/
+/** User defined code that reflects axioms and theorems: Begin **//*
+
 		test.random_USER_LANE = test.GenerateRandomInteger();
 		test.random_USER_CAR = test.GenerateRandomInteger();
-		/** User defined code that reflects axioms and theorems: End **/
+		*/
+/** User defined code that reflects axioms and theorems: End **//*
+
 
 		RoadFighter machine = new RoadFighter();
 		int n = 24; //the number of events in the machine
@@ -318,3 +344,4 @@ public class Test_RoadFighter{
 	}
 
 }
+*/
