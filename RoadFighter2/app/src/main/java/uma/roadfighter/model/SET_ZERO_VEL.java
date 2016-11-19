@@ -1,7 +1,7 @@
-package uma.roadfighter.model;
+package RoadFighter_sequential; 
 
-import eventb_prelude.BRelation;
-import eventb_prelude.Pair;
+import eventb_prelude.*;
+import Util.Utilities;
 
 public class SET_ZERO_VEL{
 	/*@ spec_public */ private RoadFighter machine; // reference to the machine 
@@ -17,9 +17,9 @@ public class SET_ZERO_VEL{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Car) && (machine.get_vel().apply(Car)).compareTo(new Integer(0)) < 0); */
+		ensures \result <==> machine.get_cars().has(Car); */
 	public /*@ pure */ boolean guard_SET_ZERO_VEL( Integer Car) {
-		return (machine.get_cars().has(Car) && (machine.get_vel().apply(Car)).compareTo(new Integer(0)) < 0);
+		return machine.get_cars().has(Car);
 	}
 
 	/*@ public normal_behavior

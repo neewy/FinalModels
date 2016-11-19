@@ -1,40 +1,39 @@
-package uma.roadfighter.model;
+package RoadFighter_sequential;
 
-import Util.Utilities;
-import eventb_prelude.BRelation;
-import eventb_prelude.BSet;
-import eventb_prelude.Enumerated;
-
+import eventb_prelude.*;
+import Util.*;
 //@ model import org.jmlspecs.models.JMLObjectSet;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class RoadFighter{
 	private static final Integer max_integer = Utilities.max_integer;
 	private static final Integer min_integer = Utilities.min_integer;
 
-	public SET_MAXVEL evt_SET_MAXVEL = new SET_MAXVEL(this);
-	public SET_DRIFT evt_SET_DRIFT = new SET_DRIFT(this);
-	public UPDATE_POS evt_UPDATE_POS = new UPDATE_POS(this);
-	public SET_ZERO_VEL evt_SET_ZERO_VEL = new SET_ZERO_VEL(this);
-	public DELETE_OBSTACLE evt_DELETE_OBSTACLE = new DELETE_OBSTACLE(this);
-	public UPDATE_SCORE evt_UPDATE_SCORE = new UPDATE_SCORE(this);
-	public SET_LEFT_BORDER evt_SET_LEFT_BORDER = new SET_LEFT_BORDER(this);
-	public DELETE_CAR evt_DELETE_CAR = new DELETE_CAR(this);
-	public SET_ACC evt_SET_ACC = new SET_ACC(this);
-	public SET_RIGHT_BORDER evt_SET_RIGHT_BORDER = new SET_RIGHT_BORDER(this);
-	public SET_VEL evt_SET_VEL = new SET_VEL(this);
-	public FINISHED_LANE evt_FINISHED_LANE = new FINISHED_LANE(this);
-	public CAR_RESET evt_CAR_RESET = new CAR_RESET(this);
-	public ADD_LANE evt_ADD_LANE = new ADD_LANE(this);
-	public DELETE_LANE evt_DELETE_LANE = new DELETE_LANE(this);
-	public OBJECT_COLLISION evt_OBJECT_COLLISION = new OBJECT_COLLISION(this);
-	public ADD_OBSTACLE evt_ADD_OBSTACLE = new ADD_OBSTACLE(this);
-	public SET_POS evt_SET_POS = new SET_POS(this);
-	public APPLY_FRICTION evt_APPLY_FRICTION = new APPLY_FRICTION(this);
-	public ADD_OBJECT evt_ADD_OBJECT = new ADD_OBJECT(this);
-	public SET_FINISH_LINE evt_SET_FINISH_LINE = new SET_FINISH_LINE(this);
-	public UPDATE_VEL evt_UPDATE_VEL = new UPDATE_VEL(this);
-	public ADD_CAR evt_ADD_CAR = new ADD_CAR(this);
-	public WALL_COLLISION evt_WALL_COLLISION = new WALL_COLLISION(this);
+	SET_MAXVEL evt_SET_MAXVEL = new SET_MAXVEL(this);
+	SET_DRIFT evt_SET_DRIFT = new SET_DRIFT(this);
+	UPDATE_POS evt_UPDATE_POS = new UPDATE_POS(this);
+	SET_ZERO_VEL evt_SET_ZERO_VEL = new SET_ZERO_VEL(this);
+	DELETE_OBSTACLE evt_DELETE_OBSTACLE = new DELETE_OBSTACLE(this);
+	UPDATE_SCORE evt_UPDATE_SCORE = new UPDATE_SCORE(this);
+	SET_LEFT_BORDER evt_SET_LEFT_BORDER = new SET_LEFT_BORDER(this);
+	DELETE_CAR evt_DELETE_CAR = new DELETE_CAR(this);
+	SET_ACC evt_SET_ACC = new SET_ACC(this);
+	SET_RIGHT_BORDER evt_SET_RIGHT_BORDER = new SET_RIGHT_BORDER(this);
+	SET_VEL evt_SET_VEL = new SET_VEL(this);
+	FINISHED_LANE evt_FINISHED_LANE = new FINISHED_LANE(this);
+	CAR_RESET evt_CAR_RESET = new CAR_RESET(this);
+	ADD_LANE evt_ADD_LANE = new ADD_LANE(this);
+	DELETE_LANE evt_DELETE_LANE = new DELETE_LANE(this);
+	OBJECT_COLLISION evt_OBJECT_COLLISION = new OBJECT_COLLISION(this);
+	ADD_OBSTACLE evt_ADD_OBSTACLE = new ADD_OBSTACLE(this);
+	SET_POS evt_SET_POS = new SET_POS(this);
+	APPLY_FRICTION evt_APPLY_FRICTION = new APPLY_FRICTION(this);
+	ADD_OBJECT evt_ADD_OBJECT = new ADD_OBJECT(this);
+	SET_FINISH_LINE evt_SET_FINISH_LINE = new SET_FINISH_LINE(this);
+	UPDATE_VEL evt_UPDATE_VEL = new UPDATE_VEL(this);
+	ADD_CAR evt_ADD_CAR = new ADD_CAR(this);
+	WALL_COLLISION evt_WALL_COLLISION = new WALL_COLLISION(this);
 
 
 	/******Set definitions******/
@@ -47,10 +46,10 @@ public class RoadFighter{
 
 	/******Constant definitions******/
 	//@ public static constraint USER_CAR.equals(\old(USER_CAR)); 
-	public static final Integer USER_CAR = 1;
+	public static final Integer USER_CAR = Test_RoadFighter.random_USER_CAR;
 
 	//@ public static constraint USER_LANE.equals(\old(USER_LANE)); 
-	public static final Integer USER_LANE = 0;
+	public static final Integer USER_LANE = Test_RoadFighter.random_USER_LANE;
 
 
 
@@ -120,7 +119,7 @@ public class RoadFighter{
 		 width.domain().equals(objects) && width.range().isSubset(NAT.instance) && width.isaFunction() && BRelation.cross(objects,NAT.instance).has(width) &&
 		 height.domain().equals(objects) && height.range().isSubset(NAT.instance) && height.isaFunction() && BRelation.cross(objects,NAT.instance).has(height) &&
 		 obj_desc.domain().equals(objects) && obj_desc.range().isSubset(NAT.instance) && obj_desc.isaFunction() && BRelation.cross(objects,NAT.instance).has(obj_desc) &&
-		 (\forall Integer object1;  (\forall Integer object2;((objects.has(object1) && objects.has(object2) && !object1.equals(object2)) ==> ((new Integer(posX.apply(object2) - posX.apply(object1))).compareTo(new Integer(new Integer(width.apply(object2) / new Integer(2)) + new Integer(width.apply(object1) / new Integer(2)))) > 0 || (new Integer(posY.apply(object2) - posY.apply(object1))).compareTo(new Integer(new Integer(height.apply(object2) / new Integer(2)) + new Integer(height.apply(object1) / new Integer(2)))) > 0 || (new Integer(posX.apply(object1) - posX.apply(object2))).compareTo(new Integer(new Integer(width.apply(object2) / new Integer(2)) + new Integer(width.apply(object1) / new Integer(2)))) > 0 || (new Integer(posY.apply(object1) - posY.apply(object2))).compareTo(new Integer(new Integer(height.apply(object2) / new Integer(2)) + new Integer(height.apply(object1) / new Integer(2)))) > 0)))) &&
+		 (\forall Integer object1;  (\forall Integer object2;((!objects.equals(BSet.EMPTY)) ==> (objects.has(object1) && objects.has(object2) && !object1.equals(object2) && (new Integer(posX.apply(object2) - posX.apply(object1))).compareTo(new Integer(new Integer(width.apply(object2) / new Integer(2)) + new Integer(width.apply(object1) / new Integer(2)))) < 0 && (new Integer(posY.apply(object2) - posY.apply(object1))).compareTo(new Integer(new Integer(height.apply(object2) / new Integer(2)) + new Integer(height.apply(object1) / new Integer(2)))) < 0)))) &&
 		 drift.domain().equals(cars) && drift.range().isSubset(new BSet<Integer>(new Integer(-1),new Integer(0),new Integer(1))) && drift.isaFunction() && BRelation.cross(cars,new BSet<Integer>(new Integer(-1),new Integer(0),new Integer(1))).has(drift) &&
 		 vel.domain().equals(cars) && vel.range().isSubset(NAT.instance) && vel.isaFunction() && BRelation.cross(cars,NAT.instance).has(vel) &&
 		 acc.domain().equals(cars) && acc.range().isSubset(INT.instance) && acc.isaFunction() && BRelation.cross(cars,INT.instance).has(acc) &&

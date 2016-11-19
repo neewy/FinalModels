@@ -1,5 +1,128 @@
 [
     {
+        "outputFile": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 44,
+                    "endOffset": 95
+                },
+                "from": {
+                    "file": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/values/colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 94,
+                        "endColumn": 44,
+                        "endOffset": 134
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 100,
+                    "endColumn": 38,
+                    "endOffset": 134
+                },
+                "from": {
+                    "file": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/values/colors.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 38,
+                        "endOffset": 89
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 139,
+                    "endColumn": 49,
+                    "endOffset": 184
+                },
+                "from": {
+                    "file": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 124,
+                        "endColumn": 49,
+                        "endOffset": 169
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 189,
+                    "endColumn": 67,
+                    "endOffset": 252
+                },
+                "from": {
+                    "file": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 67,
+                        "endOffset": 119
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 257,
+                    "endLine": 13,
+                    "endColumn": 12,
+                    "endOffset": 614
+                },
+                "from": {
+                    "file": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 186,
+                        "endLine": 13,
+                        "endColumn": 12,
+                        "endOffset": 543
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 619,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 845
+                },
+                "from": {
+                    "file": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 581,
+                        "endLine": 19,
+                        "endColumn": 12,
+                        "endOffset": 807
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/Users/neewy/Documents/MSIT-SE/Models/final/RoadFighter2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
         "map": [
             {

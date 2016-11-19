@@ -1,4 +1,4 @@
-package uma.roadfighter.model;
+package RoadFighter_sequential; 
 
 import eventb_prelude.*;
 import Util.Utilities;
@@ -17,9 +17,9 @@ public class APPLY_FRICTION{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Obj) && NAT.instance.has(Elapsed) && machine.get_lanes().has(Lane) && machine.get_acc().apply(Obj).equals(new Integer(0)) && (new Integer(machine.get_vel().apply(Obj) - new Integer(machine.get_friction().apply(Lane) * new Integer(5) * Elapsed))).compareTo(new Integer(0)) >= 0); */
+		ensures \result <==> (machine.get_cars().has(Obj) && NAT.instance.has(Elapsed) && machine.get_lanes().has(Lane) && (machine.get_acc().apply(Obj)).compareTo(new Integer(1)) < 0 && (new Integer(machine.get_vel().apply(Obj) - new Integer(machine.get_friction().apply(Lane) * new Integer(5) * Elapsed))).compareTo(new Integer(0)) >= 0); */
 	public /*@ pure */ boolean guard_APPLY_FRICTION( Integer Elapsed, Integer Lane, Integer Obj) {
-		return (machine.get_cars().has(Obj) && NAT.instance.has(Elapsed) && machine.get_lanes().has(Lane) && machine.get_acc().apply(Obj).equals(new Integer(0)) && (new Integer(machine.get_vel().apply(Obj) - new Integer(machine.get_friction().apply(Lane) * new Integer(5) * Elapsed))).compareTo(new Integer(0)) >= 0);
+		return (machine.get_cars().has(Obj) && NAT.instance.has(Elapsed) && machine.get_lanes().has(Lane) && (machine.get_acc().apply(Obj)).compareTo(new Integer(1)) < 0 && (new Integer(machine.get_vel().apply(Obj) - new Integer(machine.get_friction().apply(Lane) * new Integer(5) * Elapsed))).compareTo(new Integer(0)) >= 0);
 	}
 
 	/*@ public normal_behavior

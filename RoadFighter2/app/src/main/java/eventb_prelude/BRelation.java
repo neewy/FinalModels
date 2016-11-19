@@ -1,5 +1,6 @@
 package eventb_prelude;
 
+import java.util.TreeSet;
 import java.util.Iterator;
 
 /** a class to model Event-B relations in Java 
@@ -29,7 +30,7 @@ public class BRelation<K, V> extends BSet<Pair<K, V>> {
 		       			(\exists int i; 0 <= i && i < pairs.length;
 		          			pairs[i].fst().equals(k) && pairs[i].snd().equals(v))));
 		 */
-		public BRelation(Pair<K,V>... pairs) {
+		public BRelation(Pair<K,V> ... pairs) {
 			this();
 			for (Pair<K,V> pair : pairs) {
 				add(pair);
@@ -278,7 +279,7 @@ public class BRelation<K, V> extends BSet<Pair<K, V>> {
 		 	assignable this.*;
 		 	ensures ! \result.has(pair);
 		 */
-		public BRelation<K, V> delete(Pair<K,V> pair) {
+		public BRelation<K, V> delete(Pair<K,V> pair) {			
 			BRelation<K,V> res = new BRelation<K,V>();
 
 			for(Pair<K,V> p : this) {
@@ -353,7 +354,7 @@ public class BRelation<K, V> extends BSet<Pair<K, V>> {
 	        ensures (\forall Pair<K, V> e; \result.has(e) <==>
 	          (\exists int i; 0 <= 1 && i < sets.length; sets[i].has(e)));
 	     */
-		public /*@ pure */ static <K, V> BRelation<K, V> union(BRelation<K, V>... sets) {
+		public /*@ pure */ static <K, V> BRelation<K, V> union(BRelation<K, V> ... sets) {
 			BRelation<K, V> res = new BRelation<K, V>();
 			for (BRelation<K, V> set : sets) {
 				res.unionInPlace(set);
@@ -384,7 +385,7 @@ public class BRelation<K, V> extends BSet<Pair<K, V>> {
 	        ensures (\forall Pair<K, V> e; \result.has(e) <==>
 	          (\forall int i; 0 <= 1 && i < sets.length; sets[i].has(e)));
 	     */
-		public /*@ pure */ static <K, V> BRelation<K, V> intersection(BRelation<K, V>... sets) {
+		public /*@ pure */ static <K, V> BRelation<K, V> intersection(BRelation<K, V> ... sets) {
 			BRelation<K, V> res = sets[0];
 			for (int i = 1; i < sets.length; i++) {
 				res.intersectionInPlace(sets[i]);
@@ -401,7 +402,7 @@ public class BRelation<K, V> extends BSet<Pair<K, V>> {
 			BRelation<K, V> res = new BRelation<K,V>();
 			res.addAll(this);
 			
-			for (Pair<K, V> pair : otherRel)
+			for (Pair<K, V> pair : otherRel) 
 				res.remove(pair);
 				
 			return res;
@@ -733,7 +734,7 @@ public class BRelation<K, V> extends BSet<Pair<K, V>> {
 	     	assignable \nothing;
 	        ensures \result <==> (\forall Pair<K, V> e; this.has(e); other.has(e));
 	     */
-		public /*@ pure */ boolean isSubset(BSet<Pair<K, V>> other) {
+		public /*@ pure */ boolean isSubset(BSet<Pair<K, V>> other) {	
 			for(Pair<K,V> pair : this) {
 				if (!other.has(pair)) return false;
 			}

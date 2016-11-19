@@ -6,8 +6,8 @@ package eventb_prelude;
  */
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.TreeSet;
+import java.util.Iterator;
 
 
 public /*@ pure */ class INT extends BSet<Integer> {
@@ -141,11 +141,11 @@ public /*@ pure */ class INT extends BSet<Integer> {
     }
     
 	public Iterator<Integer> toBag() {
-    	throw new UnsupportedOperationException("Error: a bag cannot contain the integers.");
+    	throw new UnsupportedOperationException("Error: a bag cannot contain the integers.");		
 	}
     
     public ArrayList<Integer> toSequence() {
-    	throw new UnsupportedOperationException("Error: a sequence cannot contain the integers.");
+    	throw new UnsupportedOperationException("Error: a sequence cannot contain the integers.");		
 	}
 	
     /*@ also public exceptional_behavior
@@ -153,8 +153,8 @@ public /*@ pure */ class INT extends BSet<Integer> {
         assignable \nothing;
         signals (UnsupportedOperationException);
      */
-	public /*@ pure */ Object[] toArray() {
-    	throw new UnsupportedOperationException("Error: an array cannot contain the integers.");
+	public /*@ pure */ Object [] toArray() {
+    	throw new UnsupportedOperationException("Error: an array cannot contain the integers.");		
 	}
 	
     /*@ also public exceptional_behavior
@@ -163,7 +163,7 @@ public /*@ pure */ class INT extends BSet<Integer> {
         signals (UnsupportedOperationException);
      */
 	public /*@ pure */ Iterator<Integer> iterator() {
-	   	throw new UnsupportedOperationException("Error: the integers are not iterable.");
+	   	throw new UnsupportedOperationException("Error: the integers are not iterable.");		
 	}
 
 	/*@ also requires true;
@@ -180,7 +180,7 @@ public /*@ pure */ class INT extends BSet<Integer> {
 	signals (UnsupportedOperationException);
      */
     public /*@ pure */ BSet<BSet<Integer>> pow() {
-    	throw new UnsupportedOperationException("Error: can't compute POW(INT).");
+    	throw new UnsupportedOperationException("Error: can't compute POW(INT).");    	
     }
     
     /*@ also public exceptional_behavior
@@ -189,14 +189,14 @@ public /*@ pure */ class INT extends BSet<Integer> {
 	signals (UnsupportedOperationException);
      */
     public BSet<BSet<Integer>> pow1() {
-    	throw new UnsupportedOperationException("Error: can't compute POW1(INT).");
+    	throw new UnsupportedOperationException("Error: can't compute POW1(INT).");    	
     }
     
     /*@ also requires true;
      	assignable \nothing;
         ensures \result <==> parts.length == 1 && parts[0] instanceof INT;
      */
-    public /*@ pure */ boolean INT_partition(BSet<Integer>... parts) {
+    public /*@ pure */ boolean INT_partition(BSet<Integer> ... parts) {
     	return parts.length == 1 && parts[0] instanceof INT;
     }
     
@@ -206,7 +206,7 @@ public /*@ pure */ class INT extends BSet<Integer> {
         signals (UnsupportedOperationException);
      */
     public /*@ pure */ Integer max() {
-    	throw new UnsupportedOperationException("Error: can't compute max of INT.");
+    	throw new UnsupportedOperationException("Error: can't compute max of INT.");    	    	
     }
     
     /*@ also public exceptional_behavior
@@ -215,6 +215,6 @@ public /*@ pure */ class INT extends BSet<Integer> {
         signals (UnsupportedOperationException);
      */
     public /*@ pure */ Integer min() {
-    	throw new UnsupportedOperationException("Error: can't compute min of INT.");
+    	throw new UnsupportedOperationException("Error: can't compute min of INT.");    	    	
     }
 }

@@ -1,6 +1,18 @@
 [
     {
+        "merged": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/build/intermediates/res/merged/debug/layout/main.xml",
+        "source": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/layout/main.xml"
+    },
+    {
+        "merged": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/build/intermediates/res/merged/debug/layout/finish.xml",
+        "source": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/layout/finish.xml"
+    },
+    {
         "merged": "/Users/neewy/Documents/MSIT-SE/Models/final/RoadFighter2/app/build/intermediates/res/merged/debug/layout/main.xml",
         "source": "/Users/neewy/Documents/MSIT-SE/Models/final/RoadFighter2/app/src/main/res/layout/main.xml"
+    },
+    {
+        "merged": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/build/intermediates/res/merged/debug/layout/main_menu.xml",
+        "source": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/layout/main_menu.xml"
     }
 ]

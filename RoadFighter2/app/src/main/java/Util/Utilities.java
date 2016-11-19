@@ -41,8 +41,8 @@ public class Utilities {
 		for (int j=0; j < turn.length; j++) {
 			while (want[j]) {}
 			while ((turn[j] != 0) &&
-					((turn[j] < turn[eid]) ||
-							((turn[j] == turn[eid]) && ((j < eid))))){}
+				((turn[j] < turn[eid]) ||
+				((turn[j] == turn[eid]) && ((j < eid))))){}
 		}
 	}
 
@@ -62,9 +62,9 @@ public class Utilities {
 		Random rnd = new Random();
 		int value = rnd.nextInt(s.size()-1);
 		if (s instanceof BRelation){
-			return (T) (((BRelation) s).toSet().toArray()[value]);
+			return (T) (((BRelation) s).toSet().toArray()[value]); 
 		}else{
-			return (T) (s.toArray()[value]);
+			return (T) (s.toArray()[value]); 
 		}
 	}
 	public static <T> BSet<T> someSet(BSet<T> s){

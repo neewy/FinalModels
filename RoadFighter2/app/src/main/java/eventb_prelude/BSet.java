@@ -267,7 +267,7 @@ public class BSet<E> extends TreeSet<E> implements Comparable<E> {
 	 	ensures (\forall E e; \result.has(e) <==>
 					(\exists int i; 0 <= 1 && i < sets.length; sets[i].has(e)));
 	*/
-	public /*@ pure */ static <E> BSet<E> union(BSet<E>... sets) {
+	public /*@ pure */ static <E> BSet<E> union(BSet<E> ... sets) {
 		BSet<E> res = new BSet<E>();
 		for (BSet<E> set : sets) {
 			res.unionInPlace(set);
@@ -303,7 +303,7 @@ public class BSet<E> extends TreeSet<E> implements Comparable<E> {
 			}
 			return res;
 		} else {
-			BSet<E> res = new BSet<E>(); // the empty set
+			BSet<E> res = new  BSet<E>(); // the empty set
 
 			for (E e : s2) { 
 				if (contains(e)) {
@@ -340,7 +340,7 @@ public class BSet<E> extends TreeSet<E> implements Comparable<E> {
 	 	ensures (\forall E e; \result.has(e) <==>
           (\forall int i; 0 <= 1 && i < sets.length; sets[i].has(e)));
     */
-	public /*@ pure */ static <E> BSet<E> intersection(BSet<E>... sets) {
+	public /*@ pure */ static <E> BSet<E> intersection(BSet<E> ... sets) {
 		BSet<E> res = sets[0];
 		for (int i = 1; i < sets.length; i++) {
 			res.intersectionInPlace(sets[i]);
@@ -420,7 +420,7 @@ public class BSet<E> extends TreeSet<E> implements Comparable<E> {
 	 		requires true;
 	 		assignable \nothing;
 			ensures \result.equals(this.toArray());*/
-	public /*@ pure */ Object[] toArray() {
+	public /*@ pure */ Object [] toArray() {
 		return super.toArray();
 	}
 
@@ -438,7 +438,7 @@ public class BSet<E> extends TreeSet<E> implements Comparable<E> {
 	 */
 	public /*@ pure */ BSet<BSet<E>> pow() {
 		BSet<BSet<E>> ps = new BSet<BSet<E>>();
-		ps.add(new BSet<E>());   // add the empty set
+		ps.add(new BSet<E>());   // add the empty set 
 
 		// for every item in the original set
 		for(E item : this) {	
@@ -484,7 +484,7 @@ public class BSet<E> extends TreeSet<E> implements Comparable<E> {
 	/*TODO ensures \result <==> (\forall int i; 0 <= i && i < parts.length; 
 	!(\exists int j; 0 <= j && j < parts.length; i != j && !parts[i].intersection(parts[j]).isEmpty()))
 	&& (\forall E e; this.has(e) <==> (\exists int i; 0 <= i && i < parts.length; parts[i].has(e)));*/
-	public /*@ pure */ static <E> boolean partition(BSet<E>... parts) {
+	public /*@ pure */ static <E> boolean partition(BSet<E> ... parts) {
 		BSet<E> tmp = new BSet<E>(); // the empty set
 
 		if(parts.length == 0) return false;

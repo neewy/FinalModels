@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/build/intermediates/res/merged/debug/drawable-ldpi/ic_launcher.png",
+        "source": "/Users/elena/drive/innopolis/projects/models/FinalModels/RoadFighter2/app/src/main/res/drawable-ldpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/neewy/Documents/MSIT-SE/Models/final/RoadFighter2/app/build/intermediates/res/merged/debug/drawable-ldpi/ic_launcher.png",
         "source": "/Users/neewy/Documents/MSIT-SE/Models/final/RoadFighter2/app/src/main/res/drawable-ldpi/ic_launcher.png"
     }

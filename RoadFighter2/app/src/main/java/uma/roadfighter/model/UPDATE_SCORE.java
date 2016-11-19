@@ -1,8 +1,7 @@
-package uma.roadfighter.model;
+package RoadFighter_sequential; 
 
-import eventb_prelude.BRelation;
-import eventb_prelude.INT;
-import eventb_prelude.Pair;
+import eventb_prelude.*;
+import Util.Utilities;
 
 public class UPDATE_SCORE{
 	/*@ spec_public */ private RoadFighter machine; // reference to the machine 

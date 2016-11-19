@@ -1,4 +1,4 @@
-package uma.roadfighter.model;
+package RoadFighter_sequential; 
 
 import eventb_prelude.*;
 import Util.Utilities;
@@ -17,9 +17,9 @@ public class ADD_OBSTACLE{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.OBJECTS.difference(machine.get_objects()).has(Obs) && NAT.instance.has(Desc) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(W) && NAT.instance.has(H)); */
+		ensures \result <==> (machine.OBJECTS.difference(machine.get_objects()).has(Obs) && NAT.instance.has(Desc) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(W) && NAT.instance.has(H) &&  (\forall Integer ObsExisted;machine.get_objects().has(ObsExisted) && (new Integer(machine.get_posX().apply(ObsExisted) - X)).compareTo(new Integer(new Integer(machine.get_width().apply(ObsExisted) / new Integer(2)) + new Integer(W / new Integer(2)))) < 0 && (new Integer(machine.get_posY().apply(ObsExisted) - Y)).compareTo(new Integer(new Integer(machine.get_height().apply(ObsExisted) / new Integer(2)) + new Integer(H / new Integer(2)))) < 0)); */
 	public /*@ pure */ boolean guard_ADD_OBSTACLE( Integer Desc, Integer H, Integer Obs, Integer W, Integer X, Integer Y) {
-		return (machine.OBJECTS.difference(machine.get_objects()).has(Obs) && NAT.instance.has(Desc) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(W) && NAT.instance.has(H));
+		return (machine.OBJECTS.difference(machine.get_objects()).has(Obs) && NAT.instance.has(Desc) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(W) && NAT.instance.has(H) && true);
 	}
 
 	/*@ public normal_behavior

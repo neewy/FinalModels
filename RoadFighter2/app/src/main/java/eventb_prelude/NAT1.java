@@ -176,11 +176,11 @@ public class NAT1 extends BSet<Integer> {
 
     
     public Iterator<Integer> toBag() {
-    	throw new UnsupportedOperationException("Error: a bag cannot contain the NAT1s.");
+    	throw new UnsupportedOperationException("Error: a bag cannot contain the NAT1s.");		
 	}
     
     public ArrayList<Integer> toSequence() {
-    	throw new UnsupportedOperationException("Error: a sequence cannot contain the NAT1s.");
+    	throw new UnsupportedOperationException("Error: a sequence cannot contain the NAT1s.");		
 	}
 	
     /*@ also public exceptional_behavior
@@ -188,8 +188,8 @@ public class NAT1 extends BSet<Integer> {
         assignable \nothing;
         signals (UnsupportedOperationException);
      */
-	public /*@ pure */ Object[] toArray() {
-    	throw new UnsupportedOperationException("Error: an array cannot contain the NAT1s.");
+	public /*@ pure */ Object [] toArray() {
+    	throw new UnsupportedOperationException("Error: an array cannot contain the NAT1s.");		
 	}
 	
     /*@ also public exceptional_behavior
@@ -198,7 +198,7 @@ public class NAT1 extends BSet<Integer> {
         signals (UnsupportedOperationException);
      */
 	public /*@ pure */ Iterator<Integer> iterator() {
-	   	throw new UnsupportedOperationException("Error: the NAT1s are not iterable.");
+	   	throw new UnsupportedOperationException("Error: the NAT1s are not iterable.");		
 	}
 
 	/*@ also requires true;
@@ -215,7 +215,7 @@ public class NAT1 extends BSet<Integer> {
 	signals (UnsupportedOperationException);
      */
     public /*@ pure */ BSet<BSet<Integer>> pow() {
-    	throw new UnsupportedOperationException("Error: can't compute POW(NAT1).");
+    	throw new UnsupportedOperationException("Error: can't compute POW(NAT1).");    	
     }
     
     /*@ also public exceptional_behavior
@@ -224,14 +224,14 @@ public class NAT1 extends BSet<Integer> {
 	signals (UnsupportedOperationException);
      */
     public /*@ pure */ BSet<BSet<Integer>> pow1() {
-    	throw new UnsupportedOperationException("Error: can't compute POW1(NAT1).");
+    	throw new UnsupportedOperationException("Error: can't compute POW1(NAT1).");    	
     }
     
     /*@ also requires true;
      	assignable \nothing;
         ensures \result <==> parts.length == 1 && parts[0] instanceof NAT1;
      */
-    public /*@ pure */ boolean NAT1_partition(BSet<Integer>... parts) {
+    public /*@ pure */ boolean NAT1_partition(BSet<Integer> ... parts) {
     	return (parts.length == 1 && parts[0] instanceof NAT1);
     }
     
@@ -241,7 +241,7 @@ public class NAT1 extends BSet<Integer> {
         signals (UnsupportedOperationException);
      */
     public /*@ pure */ Integer max() {
-    	throw new UnsupportedOperationException("Error: can't compute max of NAT1.");
+    	throw new UnsupportedOperationException("Error: can't compute max of NAT1.");    	    	
     }
     
     /* also requires true;

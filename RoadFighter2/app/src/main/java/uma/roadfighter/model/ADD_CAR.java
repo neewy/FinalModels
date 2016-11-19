@@ -1,4 +1,4 @@
-package uma.roadfighter.model;
+package RoadFighter_sequential; 
 
 import eventb_prelude.*;
 import Util.Utilities;
@@ -17,9 +17,9 @@ public class ADD_CAR{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.OBJECTS.difference(machine.get_objects()).has(Car) && NAT.instance.has(Desc) && NAT.instance.has(W) && NAT.instance.has(H) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(M) && NAT.instance.has(F)); */
+		ensures \result <==> (machine.OBJECTS.difference(machine.get_objects()).has(Car) && NAT.instance.has(Desc) && NAT.instance.has(W) && NAT.instance.has(H) && INT.instance.has(X) && INT.instance.has(Y) &&  (\forall Integer CarExisted;machine.get_objects().has(CarExisted) && (new Integer(machine.get_posX().apply(CarExisted) - X)).compareTo(new Integer(new Integer(machine.get_width().apply(CarExisted) / new Integer(2)) + new Integer(W / new Integer(2)))) < 0 && (new Integer(machine.get_posY().apply(CarExisted) - Y)).compareTo(new Integer(new Integer(machine.get_height().apply(CarExisted) / new Integer(2)) + new Integer(H / new Integer(2)))) < 0) && NAT.instance.has(M) && NAT.instance.has(F)); */
 	public /*@ pure */ boolean guard_ADD_CAR( Integer Car, Integer Desc, Integer H, Integer W, Integer X, Integer Y, Integer F, Integer M) {
-		return (machine.OBJECTS.difference(machine.get_objects()).has(Car) && NAT.instance.has(Desc) && NAT.instance.has(W) && NAT.instance.has(H) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(M) && NAT.instance.has(F));
+		return (machine.OBJECTS.difference(machine.get_objects()).has(Car) && NAT.instance.has(Desc) && NAT.instance.has(W) && NAT.instance.has(H) && INT.instance.has(X) && INT.instance.has(Y) && true && NAT.instance.has(M) && NAT.instance.has(F));
 	}
 
 	/*@ public normal_behavior

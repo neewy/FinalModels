@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background">#AEDCE0</color>
+    <color name="blue">#AEDCE0</color>
     <string name="app_name">RoadFighter2</string>
     <string name="hello">Hello World, RoadFighterActivity!</string>
     <style name="AppBaseTheme" parent="android:Theme.Light">
+        <item name="android:windowBackground">@color/background</item>
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -10,6 +13,7 @@
         -->
     </style>
     <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowBackground">@color/background</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 </resources>
