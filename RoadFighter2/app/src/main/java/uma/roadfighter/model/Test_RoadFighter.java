@@ -1,6 +1,5 @@
 /*
 package uma.roadfighter.model;
-
 import java.util.Random;
 import Util.Utilities;
 import eventb_prelude.*;

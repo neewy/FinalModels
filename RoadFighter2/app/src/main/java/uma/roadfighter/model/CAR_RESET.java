@@ -25,7 +25,7 @@ public class CAR_RESET{
 	/*@ public normal_behavior
 		requires guard_CAR_RESET(Car,Lane);
 		assignable machine.posX, machine.drift, machine.vel, machine.acc, machine.collision;
-		ensures guard_CAR_RESET(Car,Lane) &&  machine.get_posX().equals(\old((machine.get_posX().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,new Integer(new Integer(machine.get_right_border().apply(Lane) - machine.get_left_border().apply(Lane)) / 2))))))) &&  machine.get_drift().equals(\old((machine.get_drift().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))))) &&  machine.get_vel().equals(\old((machine.get_vel().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))))) &&  machine.get_acc().equals(\old((machine.get_acc().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))))) &&  machine.get_collision().equals(\old((machine.get_collision().override(new BRelation<Integer,Boolean>(new Pair<Integer,Boolean>(Car,false)))))); 
+		ensures guard_CAR_RESET(Car,Lane) &&  machine.get_posX().equals(\old((machine.get_posX().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,new Integer(machine.get_left_border().apply(Lane) + new Integer(new Integer(machine.get_right_border().apply(Lane) - machine.get_left_border().apply(Lane)) / 2)))))))) &&  machine.get_drift().equals(\old((machine.get_drift().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))))) &&  machine.get_vel().equals(\old((machine.get_vel().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))))) &&  machine.get_acc().equals(\old((machine.get_acc().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))))) &&  machine.get_collision().equals(\old((machine.get_collision().override(new BRelation<Integer,Boolean>(new Pair<Integer,Boolean>(Car,false)))))); 
 	 also
 		requires !guard_CAR_RESET(Car,Lane);
 		assignable \nothing;
@@ -38,7 +38,7 @@ public class CAR_RESET{
 			BRelation<Integer,Integer> acc_tmp = machine.get_acc();
 			BRelation<Integer,Boolean> collision_tmp = machine.get_collision();
 
-			machine.set_posX((posX_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,new Integer(new Integer(machine.get_right_border().apply(Lane) - machine.get_left_border().apply(Lane)) / 2))))));
+			machine.set_posX((posX_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,new Integer(machine.get_left_border().apply(Lane) + new Integer(new Integer(machine.get_right_border().apply(Lane) - machine.get_left_border().apply(Lane)) / 2)))))));
 			machine.set_drift((drift_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))));
 			machine.set_vel((vel_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))));
 			machine.set_acc((acc_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,0)))));
