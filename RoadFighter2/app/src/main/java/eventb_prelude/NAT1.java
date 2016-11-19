@@ -1,15 +1,14 @@
-package eventb2jml_plugin.models.JML;
+package eventb_prelude;
 
-/** representation of the EventB type NAT1 as a JMLEqualsSet
- * @author Tim Wahls
- * @version 11/23/2011
- * @version 12/20/2011
+
+/** representation of the EventB type NAT1 as a BSet
+ * @author Tim Wahls & Nestor Catano & Victor Rivera
  */
 
-import org.jmlspecs.models.JMLEqualsBag;
-import org.jmlspecs.models.JMLEqualsSequence;
-import org.jmlspecs.models.JMLEqualsSet;
-import org.jmlspecs.models.JMLIterator;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class NAT1 extends BSet<Integer> {
 	public static final NAT1 instance = new NAT1();
@@ -17,63 +16,71 @@ public class NAT1 extends BSet<Integer> {
 	private NAT1() {}
 	
 	
-	/*@ also assignable \nothing;
+	/*@ also requires true;
+	 	assignable \nothing;
         ensures \result <==> obj instanceof Integer && ((Integer) obj) > 0;
      */
-	public boolean has(Object obj) {
+	public /*@ pure */ boolean has(Object obj) {
 		return INT.instance.has(obj) && ((Integer) obj) > 0;
 	}
 	
-	/*@ also assignable \nothing;
+	/*@ also requires true;
+	 	assignable \nothing;
         ensures \result <==> (\forall Integer i; c.contains(i); this.has(i));
      */
-	public boolean containsAll(java.util.Collection<Integer> c) {
-		for (Integer i : c) {
-			if (i <= 0) return false;
+	public /*@ pure */ boolean containsAll(java.util.Collection<?> c) {
+		for (Object i : c) {
+			if (i instanceof Integer) {
+				if ((Integer)i <= 0) return false;
+			} else return false;
 		}
 		return true;
 	}
 	
-	/*@ also assignable \nothing;
+	/*@ also requires true;
+	 	assignable \nothing;
         ensures \result <==> obj instanceof BSet && (\forall Integer i; this.has(i) <==> ((BSet) obj).has(i));
      */
-	public boolean equals(Object obj) {
+	public /*@ pure */ boolean equals(Object obj) {
 		return obj instanceof NAT1;
 	}
 
-	/*@ also assignable \nothing;
+	/*@ also requires true;
+	 	assignable \nothing;
         ensures \result <==> false;
     */
-    public boolean isEmpty() {
+    public /*@ pure */ boolean isEmpty() {
     	return false;
     }
     
     /*@ also public exceptional_behavior
+        requires true;
         assignable \nothing;
         signals (UnsupportedOperationException);
      */
-    public int int_size() {
+    public /*@ pure */ int int_size() {
         throw new UnsupportedOperationException("Error: size of the NATs not representable");
     }  
     
-    /*@ also assignable \nothing;
+    /*@ also requires true;
+     	assignable \nothing;
         ensures \result == "NAT1".hashCode();
      */
-    public int hashCode() {
+    public /*@ pure */ int hashCode() {
     	return "NAT1".hashCode();
     }
     
     /** inherited specification should be correct for all set operations */
     
-    public boolean isSubset(/*@ non_null @*/ JMLEqualsSet<Integer> s2) {
+    public boolean isSubset(/*@ non_null @*/ BSet<Integer> s2) {
     	return s2 instanceof INT || s2 instanceof NAT || s2 instanceof NAT1;
     }
     
-    public boolean isProperSubset(/*@ non_null @*/ JMLEqualsSet<Integer> s2) {
+    public boolean isProperSubset(/*@ non_null @*/ BSet<Integer> s2) {
     	return s2 instanceof INT || s2 instanceof NAT;
     }
     
-    public  boolean isSuperset(/*@ non_null @*/ JMLEqualsSet<Integer> s2) {
+    public  boolean isSuperset(/*@ non_null @*/ BSet<Integer> s2) {
     	if (s2 instanceof INT || s2 instanceof NAT) {
     		return false;
     	} else if (s2 instanceof NAT1) {
@@ -86,7 +93,7 @@ public class NAT1 extends BSet<Integer> {
     	}
     }
 
-    public boolean isProperSuperset(/*@ non_null @*/ JMLEqualsSet<Integer> s2) {
+    public boolean isProperSuperset(/*@ non_null @*/ BSet<Integer> s2) {
     	if (s2 instanceof INT || s2 instanceof NAT || s2 instanceof NAT1) {
     		return false;
     	} else {
@@ -106,22 +113,24 @@ public class NAT1 extends BSet<Integer> {
     }
     
     /*@ also public exceptional_behavior
+        requires true;
         assignable \nothing;
         signals (UnsupportedOperationException);
      */
-    public BSet<Integer> insert(Integer i) {
+    public /*@ pure */ BSet<Integer> insert(Integer i) {
     	throw new UnsupportedOperationException("Error: can't insert into the NAT1s");
     }
     
     /*@ also public exceptional_behavior
+        requires true;
         assignable \nothing;
         signals (UnsupportedOperationException);
      */
-    public BSet<Integer> remove(Integer i) {
+    public /*@ pure */ BSet<Integer> remove(Integer i) {
     	throw new UnsupportedOperationException("Error: can't remove from the NAT1s");
     }
     
-    public BSet<Integer> intersection(JMLEqualsSet<Integer> s2) {
+    public BSet<Integer> intersection(BSet<Integer> s2) {
     	if (s2 instanceof INT || s2 instanceof NAT || s2 instanceof NAT1) {
     		return this;
     	} else {
@@ -135,7 +144,7 @@ public class NAT1 extends BSet<Integer> {
     	}
      }
 	 
-    public BSet<Integer> union(JMLEqualsSet<Integer> s2) {
+    public BSet<Integer> union(BSet<Integer> s2) {
     	if (s2 instanceof INT || s2 instanceof NAT || s2 instanceof NAT1) {
     		return (BSet<Integer>) s2;
     	} else {
@@ -149,7 +158,7 @@ public class NAT1 extends BSet<Integer> {
     }
 
     
-    public BSet<Integer> difference(JMLEqualsSet<Integer> s2) {
+    public BSet<Integer> difference(BSet<Integer> s2) {
     	if (s2 instanceof INT || s2 instanceof NAT || s2 instanceof NAT1) {
     		return new BSet<Integer>();
     	} else {
@@ -157,84 +166,89 @@ public class NAT1 extends BSet<Integer> {
     	}
     }
     
-    /*@ also assignable \nothing;
+    /*@ also requires true;
+     	assignable \nothing;
         ensures \result.equals("NAT1");
      */
-    public String toString() {
+    public /*@ pure */ String toString() {
     	return "NAT1";
     }
 
     
-    /*@ also assignable \nothing;
-        ensures (\forall Integer i; this.has(i) <==> \result.has(i));
-     */
-	public JMLEqualsBag<Integer> toBag() {
-    	throw new UnsupportedOperationException("Error: a bag cannot contain the NAT1s.");		
+    public Iterator<Integer> toBag() {
+    	throw new UnsupportedOperationException("Error: a bag cannot contain the NAT1s.");
 	}
     
-    /*@ also assignable \nothing;
-        ensures (\forall Integer i; this.has(i) <==> \result.has(i));
-     */
-	public JMLEqualsSequence<Integer> toSequence() {
-    	throw new UnsupportedOperationException("Error: a sequence cannot contain the NAT1s.");		
+    public ArrayList<Integer> toSequence() {
+    	throw new UnsupportedOperationException("Error: a sequence cannot contain the NAT1s.");
 	}
 	
     /*@ also public exceptional_behavior
+        requires true;
         assignable \nothing;
         signals (UnsupportedOperationException);
      */
-	public Object [] toArray() {
-    	throw new UnsupportedOperationException("Error: an array cannot contain the NAT1s.");		
+	public /*@ pure */ Object[] toArray() {
+    	throw new UnsupportedOperationException("Error: an array cannot contain the NAT1s.");
 	}
 	
     /*@ also public exceptional_behavior
+        requires true;
         assignable \nothing;
         signals (UnsupportedOperationException);
      */
-	public JMLIterator<Integer> iterator() {
-	   	throw new UnsupportedOperationException("Error: the NAT1s are not iterable.");		
+	public /*@ pure */ Iterator<Integer> iterator() {
+	   	throw new UnsupportedOperationException("Error: the NAT1s are not iterable.");
 	}
 
-	/*@ also assignable \nothing;
+	/*@ also requires true;
+	 	assignable \nothing;
 	    ensures \result <==> false;
 	 */
-    public boolean finite() {
+    public /*@ pure */ boolean finite() {
     	return false;
     }
     
-    /*@ also assignable \nothing;
-        ensures (\forall BSet<Integer> es; es.isSubset(this) <==> \result.has(es));
+    /*@ also public exceptional_behavior
+	requires true;
+	assignable \nothing;
+	signals (UnsupportedOperationException);
      */
-    public BSet<BSet<Integer>> pow() {
-    	throw new UnsupportedOperationException("Error: can't compute POW(NAT1).");    	
+    public /*@ pure */ BSet<BSet<Integer>> pow() {
+    	throw new UnsupportedOperationException("Error: can't compute POW(NAT1).");
     }
     
-    /*@ also assignable \nothing;
-        ensures (\forall BSet<Integer> es; es.isSubset(this) && !es.isEmpty() <==> \result.has(es));
+    /*@ also public exceptional_behavior
+	requires true;
+	assignable \nothing;
+	signals (UnsupportedOperationException);
      */
-    public BSet<BSet<Integer>> pow1() {
-    	throw new UnsupportedOperationException("Error: can't compute POW1(NAT1).");    	
+    public /*@ pure */ BSet<BSet<Integer>> pow1() {
+    	throw new UnsupportedOperationException("Error: can't compute POW1(NAT1).");
     }
     
-    /*@ also assignable \nothing;
+    /*@ also requires true;
+     	assignable \nothing;
         ensures \result <==> parts.length == 1 && parts[0] instanceof NAT1;
      */
-    public boolean partition(BSet<Integer> ... parts) {
+    public /*@ pure */ boolean NAT1_partition(BSet<Integer>... parts) {
     	return (parts.length == 1 && parts[0] instanceof NAT1);
     }
     
     /*@ also public exceptional_behavior
+        requires true;
         assignable \nothing;
         signals (UnsupportedOperationException);
      */
-    public Integer max() {
-    	throw new UnsupportedOperationException("Error: can't compute max of NAT1.");    	    	
+    public /*@ pure */ Integer max() {
+    	throw new UnsupportedOperationException("Error: can't compute max of NAT1.");
     }
     
-    /* also assignable \nothing;
+    /* also requires true;
+     	assignable \nothing;
        ensures \result == 1;
      */
-    public Integer min() {
+    public /*@ pure */ Integer min() {
     	return 1;    	    	
     }
 }
