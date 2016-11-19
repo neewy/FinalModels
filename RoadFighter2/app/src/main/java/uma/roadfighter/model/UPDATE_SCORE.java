@@ -1,7 +1,8 @@
 package uma.roadfighter.model;
 
-import eventb_prelude.*;
-import Util.Utilities;
+import eventb_prelude.BRelation;
+import eventb_prelude.INT;
+import eventb_prelude.Pair;
 
 public class UPDATE_SCORE{
 	/*@ spec_public */ private RoadFighter machine; // reference to the machine 
@@ -17,9 +18,9 @@ public class UPDATE_SCORE{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Car) && NAT.instance.has(S)); */
+		ensures \result <==> (machine.get_cars().has(Car) && INT.instance.has(S)); */
 	public /*@ pure */ boolean guard_UPDATE_SCORE( Integer Car, Integer S) {
-		return (machine.get_cars().has(Car) && NAT.instance.has(S));
+		return (machine.get_cars().has(Car) && INT.instance.has(S));
 	}
 
 	/*@ public normal_behavior

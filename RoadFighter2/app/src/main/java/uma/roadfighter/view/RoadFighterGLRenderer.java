@@ -7,13 +7,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Point;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 import android.opengl.GLUtils;
 import android.os.SystemClock;
-
-import org.jmlspecs.models.JMLIterator;
 
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -408,7 +405,8 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
             }
         }
 
-        activity.setScore(roadFighter.get_score().apply(RoadFighter.USER_CAR));
+        currentScore = roadFighter.get_score().apply(RoadFighter.USER_CAR);
+        activity.setScore(currentScore);
     }
 
     private void changeMode(Integer PObj) {
