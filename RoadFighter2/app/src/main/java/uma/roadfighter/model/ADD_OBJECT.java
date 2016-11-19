@@ -17,9 +17,9 @@ public class ADD_OBJECT{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.OBJECTS.difference(machine.get_objects()).has(Obj) && NAT.instance.has(Desc) && NAT.instance.has(W) && NAT.instance.has(H) && INT.instance.has(X) && INT.instance.has(Y) &&  (\forall Integer ObjExisted;machine.get_objects().has(ObjExisted) && (new Integer(machine.get_posX().apply(ObjExisted) - X)).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(W / new Integer(2)))) < 0 && (new Integer(machine.get_posY().apply(ObjExisted) - Y)).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(H / new Integer(2)))) < 0)); */
+		ensures \result <==> (machine.OBJECTS.difference(machine.get_objects()).has(Obj) && NAT.instance.has(Desc) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(W) && NAT.instance.has(H) &&  (\forall Integer ObjExisted;((machine.get_objects().has(ObjExisted)) ==> ((new Integer(machine.get_posX().apply(ObjExisted) - X)).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(W / new Integer(2)))) > 0 || (new Integer(machine.get_posY().apply(ObjExisted) - Y)).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(H / new Integer(2)))) > 0 || (new Integer(X - machine.get_posX().apply(ObjExisted))).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(W / new Integer(2)))) > 0 || (new Integer(X - machine.get_posY().apply(ObjExisted))).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(H / new Integer(2)))) > 0)))); */
 	public /*@ pure */ boolean guard_ADD_OBJECT( Integer Desc, Integer H, Integer Obj, Integer W, Integer X, Integer Y) {
-		return (machine.OBJECTS.difference(machine.get_objects()).has(Obj) && NAT.instance.has(Desc) && NAT.instance.has(W) && NAT.instance.has(H) && INT.instance.has(X) && INT.instance.has(Y) && true);
+		return (machine.OBJECTS.difference(machine.get_objects()).has(Obj) && NAT.instance.has(Desc) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(W) && NAT.instance.has(H) && true);
 	}
 
 	/*@ public normal_behavior

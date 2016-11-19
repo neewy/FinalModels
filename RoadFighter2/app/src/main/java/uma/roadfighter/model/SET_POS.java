@@ -17,9 +17,9 @@ public class SET_POS{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_objects().has(Obj) && INT.instance.has(X) && INT.instance.has(Y)); */
+		ensures \result <==> (machine.get_objects().has(Obj) && INT.instance.has(X) && INT.instance.has(Y) &&  (\forall Integer ObjExisted;((machine.get_objects().has(ObjExisted)) ==> ((new Integer(machine.get_posX().apply(ObjExisted) - X)).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(machine.get_width().apply(Obj) / new Integer(2)))) > 0 || (new Integer(machine.get_posY().apply(ObjExisted) - Y)).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(machine.get_height().apply(Obj) / new Integer(2)))) > 0 || (new Integer(X - machine.get_posX().apply(ObjExisted))).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(machine.get_width().apply(Obj) / new Integer(2)))) > 0 || (new Integer(Y - machine.get_posY().apply(ObjExisted))).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(machine.get_height().apply(Obj) / new Integer(2)))) > 0)))); */
 	public /*@ pure */ boolean guard_SET_POS( Integer Obj, Integer X, Integer Y) {
-		return (machine.get_objects().has(Obj) && INT.instance.has(X) && INT.instance.has(Y));
+		return (machine.get_objects().has(Obj) && INT.instance.has(X) && INT.instance.has(Y) && true);
 	}
 
 	/*@ public normal_behavior

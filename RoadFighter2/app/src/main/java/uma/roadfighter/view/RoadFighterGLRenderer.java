@@ -298,11 +298,11 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         }
 
 		/* Collisions */
-        Integer PObj2 = roadFighter.USER_CAR;
+        Integer PObj1 = roadFighter.USER_CAR;
         // Obstacles + Opponents
-        for (int i = 2 + nObstacles; i < 2 + nObstacles + nOpponents; i++) {
+        for (int i = 2; i < 2 + nObstacles + nOpponents; i++) {
             if (roadFighter.get_active().apply(i)) {
-                Integer PObj1 = i;
+                Integer PObj2 = i;
                 roadFighter.evt_OBJECT_COLLISION.run_OBJECT_COLLISION(PObj1, PObj2);
             }
             // Reset Car
