@@ -17,9 +17,9 @@ public class UPDATE_SCORE{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Car) && INT.instance.has(S)); */
+		ensures \result <==> (machine.get_cars().has(Car) && INT.instance.has(S) && (new Integer(machine.get_score().apply(Car) + S)).compareTo(new Integer(0)) >= 0); */
 	public /*@ pure */ boolean guard_UPDATE_SCORE( Integer Car, Integer S) {
-		return (machine.get_cars().has(Car) && INT.instance.has(S));
+		return (machine.get_cars().has(Car) && INT.instance.has(S) && (new Integer(machine.get_score().apply(Car) + S)).compareTo(new Integer(0)) >= 0);
 	}
 
 	/*@ public normal_behavior
