@@ -17,26 +17,26 @@ public class APPLY_FRICTION{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Obj) && NAT.instance.has(Elapsed) && machine.get_lanes().has(Lane) && (machine.get_acc().apply(Obj)).compareTo(new Integer(1)) < 0 && (new Integer(machine.get_vel().apply(Obj) - new Integer(machine.get_friction().apply(Lane) * new Integer(5) * Elapsed))).compareTo(new Integer(0)) >= 0); */
-	public /*@ pure */ boolean guard_APPLY_FRICTION( Integer Elapsed, Integer Lane, Integer Obj) {
-		return (machine.get_cars().has(Obj) && NAT.instance.has(Elapsed) && machine.get_lanes().has(Lane) && (machine.get_acc().apply(Obj)).compareTo(new Integer(1)) < 0 && (new Integer(machine.get_vel().apply(Obj) - new Integer(machine.get_friction().apply(Lane) * new Integer(5) * Elapsed))).compareTo(new Integer(0)) >= 0);
+		ensures \result <==> (machine.get_cars().has(Obj_APPLY_FRICTION) && NAT.instance.has(Elapsed_APPLY_FRICTION) && machine.get_lanes().has(Lane_APPLY_FRICTION) && (machine.get_acc().apply(Obj_APPLY_FRICTION)).compareTo(new Integer(1)) < 0 && (new Integer(machine.get_vel().apply(Obj_APPLY_FRICTION) - new Integer(machine.get_friction().apply(Lane_APPLY_FRICTION) * new Integer(5) * Elapsed_APPLY_FRICTION))).compareTo(new Integer(0)) >= 0); */
+	public /*@ pure */ boolean guard_APPLY_FRICTION( Integer Elapsed_APPLY_FRICTION, Integer Lane_APPLY_FRICTION, Integer Obj_APPLY_FRICTION) {
+		return (machine.get_cars().has(Obj_APPLY_FRICTION) && NAT.instance.has(Elapsed_APPLY_FRICTION) && machine.get_lanes().has(Lane_APPLY_FRICTION) && (machine.get_acc().apply(Obj_APPLY_FRICTION)).compareTo(new Integer(1)) < 0 && (new Integer(machine.get_vel().apply(Obj_APPLY_FRICTION) - new Integer(machine.get_friction().apply(Lane_APPLY_FRICTION) * new Integer(5) * Elapsed_APPLY_FRICTION))).compareTo(new Integer(0)) >= 0);
 	}
 
 	/*@ public normal_behavior
-		requires guard_APPLY_FRICTION(Elapsed,Lane,Obj);
+		requires guard_APPLY_FRICTION(Elapsed_APPLY_FRICTION,Lane_APPLY_FRICTION,Obj_APPLY_FRICTION);
 		assignable machine.vel;
-		ensures guard_APPLY_FRICTION(Elapsed,Lane,Obj) &&  machine.get_vel().equals(\old((machine.get_vel().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,new Integer(machine.get_vel().apply(Obj) - new Integer(machine.get_friction().apply(Lane) * 5 * Elapsed)))))))); 
+		ensures guard_APPLY_FRICTION(Elapsed_APPLY_FRICTION,Lane_APPLY_FRICTION,Obj_APPLY_FRICTION) &&  machine.get_vel().equals(\old((machine.get_vel().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_APPLY_FRICTION,new Integer(machine.get_vel().apply(Obj_APPLY_FRICTION) - new Integer(machine.get_friction().apply(Lane_APPLY_FRICTION) * 5 * Elapsed_APPLY_FRICTION)))))))); 
 	 also
-		requires !guard_APPLY_FRICTION(Elapsed,Lane,Obj);
+		requires !guard_APPLY_FRICTION(Elapsed_APPLY_FRICTION,Lane_APPLY_FRICTION,Obj_APPLY_FRICTION);
 		assignable \nothing;
 		ensures true; */
-	public void run_APPLY_FRICTION( Integer Elapsed, Integer Lane, Integer Obj){
-		if(guard_APPLY_FRICTION(Elapsed,Lane,Obj)) {
+	public void run_APPLY_FRICTION( Integer Elapsed_APPLY_FRICTION, Integer Lane_APPLY_FRICTION, Integer Obj_APPLY_FRICTION){
+		if(guard_APPLY_FRICTION(Elapsed_APPLY_FRICTION,Lane_APPLY_FRICTION,Obj_APPLY_FRICTION)) {
 			BRelation<Integer,Integer> vel_tmp = machine.get_vel();
 
-			machine.set_vel((vel_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,new Integer(vel_tmp.apply(Obj) - new Integer(machine.get_friction().apply(Lane) * 5 * Elapsed)))))));
+			machine.set_vel((vel_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_APPLY_FRICTION,new Integer(vel_tmp.apply(Obj_APPLY_FRICTION) - new Integer(machine.get_friction().apply(Lane_APPLY_FRICTION) * 5 * Elapsed_APPLY_FRICTION)))))));
 
-			System.out.println("APPLY_FRICTION executed Elapsed: " + Elapsed + " Lane: " + Lane + " Obj: " + Obj + " ");
+			System.out.println("APPLY_FRICTION executed Elapsed_APPLY_FRICTION: " + Elapsed_APPLY_FRICTION + " Lane_APPLY_FRICTION: " + Lane_APPLY_FRICTION + " Obj_APPLY_FRICTION: " + Obj_APPLY_FRICTION + " ");
 		}
 	}
 

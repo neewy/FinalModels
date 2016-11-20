@@ -17,26 +17,26 @@ public class FINISHED_LANE{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Car) && machine.get_lanes().has(Lane)); */
-	public /*@ pure */ boolean guard_FINISHED_LANE( Integer Car, Integer Lane) {
-		return (machine.get_cars().has(Car) && machine.get_lanes().has(Lane));
+		ensures \result <==> (machine.get_cars().has(Car_FINISHED_LANE) && machine.get_lanes().has(Lane_FINISHED_LANE)); */
+	public /*@ pure */ boolean guard_FINISHED_LANE( Integer Car_FINISHED_LANE, Integer Lane_FINISHED_LANE) {
+		return (machine.get_cars().has(Car_FINISHED_LANE) && machine.get_lanes().has(Lane_FINISHED_LANE));
 	}
 
 	/*@ public normal_behavior
-		requires guard_FINISHED_LANE(Car,Lane);
+		requires guard_FINISHED_LANE(Car_FINISHED_LANE,Lane_FINISHED_LANE);
 		assignable machine.finished;
-		ensures guard_FINISHED_LANE(Car,Lane) &&  machine.get_finished().equals(\old((machine.get_finished().override(new BRelation<Integer,Boolean>(new Pair<Integer,Boolean>(Car,((machine.get_posY().apply(Car)).compareTo(machine.get_finish_line().apply(Lane)) > 0))))))); 
+		ensures guard_FINISHED_LANE(Car_FINISHED_LANE,Lane_FINISHED_LANE) &&  machine.get_finished().equals(\old((machine.get_finished().override(new BRelation<Integer,Boolean>(new Pair<Integer,Boolean>(Car_FINISHED_LANE,((machine.get_posY().apply(Car_FINISHED_LANE)).compareTo(machine.get_finish_line().apply(Lane_FINISHED_LANE)) > 0))))))); 
 	 also
-		requires !guard_FINISHED_LANE(Car,Lane);
+		requires !guard_FINISHED_LANE(Car_FINISHED_LANE,Lane_FINISHED_LANE);
 		assignable \nothing;
 		ensures true; */
-	public void run_FINISHED_LANE( Integer Car, Integer Lane){
-		if(guard_FINISHED_LANE(Car,Lane)) {
+	public void run_FINISHED_LANE( Integer Car_FINISHED_LANE, Integer Lane_FINISHED_LANE){
+		if(guard_FINISHED_LANE(Car_FINISHED_LANE,Lane_FINISHED_LANE)) {
 			BRelation<Integer,Boolean> finished_tmp = machine.get_finished();
 
-			machine.set_finished((finished_tmp.override(new BRelation<Integer,Boolean>(new Pair<Integer,Boolean>(Car,((machine.get_posY().apply(Car)).compareTo(machine.get_finish_line().apply(Lane)) > 0))))));
+			machine.set_finished((finished_tmp.override(new BRelation<Integer,Boolean>(new Pair<Integer,Boolean>(Car_FINISHED_LANE,((machine.get_posY().apply(Car_FINISHED_LANE)).compareTo(machine.get_finish_line().apply(Lane_FINISHED_LANE)) > 0))))));
 
-			System.out.println("FINISHED_LANE executed Car: " + Car + " Lane: " + Lane + " ");
+			System.out.println("FINISHED_LANE executed Car_FINISHED_LANE: " + Car_FINISHED_LANE + " Lane_FINISHED_LANE: " + Lane_FINISHED_LANE + " ");
 		}
 	}
 

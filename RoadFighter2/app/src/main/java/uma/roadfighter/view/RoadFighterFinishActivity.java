@@ -15,8 +15,6 @@ import uma.roadfighter.R;
 
 public class RoadFighterFinishActivity extends Activity {
 
-    private TextView score;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -26,7 +24,7 @@ public class RoadFighterFinishActivity extends Activity {
 
         setContentView(R.layout.finish);
 
-        score = (TextView) findViewById(R.id.score);
+        TextView score = (TextView) findViewById(R.id.score);
         score.setText("Your score is " + scoreInt);
 
         Button startGame = (Button) findViewById(R.id.start_game_1);

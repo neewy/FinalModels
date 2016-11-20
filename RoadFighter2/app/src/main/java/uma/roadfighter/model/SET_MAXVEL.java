@@ -17,26 +17,26 @@ public class SET_MAXVEL{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Car) && NAT.instance.has(M) && (M).compareTo(machine.get_vel().apply(Car)) >= 0); */
-	public /*@ pure */ boolean guard_SET_MAXVEL( Integer Car, Integer M) {
-		return (machine.get_cars().has(Car) && NAT.instance.has(M) && (M).compareTo(machine.get_vel().apply(Car)) >= 0);
+		ensures \result <==> (machine.get_cars().has(Car_SET_MAXVEL) && NAT.instance.has(M_SET_MAXVEL) && (M_SET_MAXVEL).compareTo(machine.get_vel().apply(Car_SET_MAXVEL)) >= 0); */
+	public /*@ pure */ boolean guard_SET_MAXVEL( Integer Car_SET_MAXVEL, Integer M_SET_MAXVEL) {
+		return (machine.get_cars().has(Car_SET_MAXVEL) && NAT.instance.has(M_SET_MAXVEL) && (M_SET_MAXVEL).compareTo(machine.get_vel().apply(Car_SET_MAXVEL)) >= 0);
 	}
 
 	/*@ public normal_behavior
-		requires guard_SET_MAXVEL(Car,M);
+		requires guard_SET_MAXVEL(Car_SET_MAXVEL,M_SET_MAXVEL);
 		assignable machine.maxvel;
-		ensures guard_SET_MAXVEL(Car,M) &&  machine.get_maxvel().equals(\old((machine.get_maxvel().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,M)))))); 
+		ensures guard_SET_MAXVEL(Car_SET_MAXVEL,M_SET_MAXVEL) &&  machine.get_maxvel().equals(\old((machine.get_maxvel().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car_SET_MAXVEL,M_SET_MAXVEL)))))); 
 	 also
-		requires !guard_SET_MAXVEL(Car,M);
+		requires !guard_SET_MAXVEL(Car_SET_MAXVEL,M_SET_MAXVEL);
 		assignable \nothing;
 		ensures true; */
-	public void run_SET_MAXVEL( Integer Car, Integer M){
-		if(guard_SET_MAXVEL(Car,M)) {
+	public void run_SET_MAXVEL( Integer Car_SET_MAXVEL, Integer M_SET_MAXVEL){
+		if(guard_SET_MAXVEL(Car_SET_MAXVEL,M_SET_MAXVEL)) {
 			BRelation<Integer,Integer> maxvel_tmp = machine.get_maxvel();
 
-			machine.set_maxvel((maxvel_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,M)))));
+			machine.set_maxvel((maxvel_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car_SET_MAXVEL,M_SET_MAXVEL)))));
 
-			System.out.println("SET_MAXVEL executed Car: " + Car + " M: " + M + " ");
+			System.out.println("SET_MAXVEL executed Car_SET_MAXVEL: " + Car_SET_MAXVEL + " M_SET_MAXVEL: " + M_SET_MAXVEL + " ");
 		}
 	}
 

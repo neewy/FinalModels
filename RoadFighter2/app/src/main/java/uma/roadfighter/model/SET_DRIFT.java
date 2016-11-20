@@ -17,26 +17,26 @@ public class SET_DRIFT{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Car) && new BSet<Integer>(new Integer(0),new Integer(-1),new Integer(1)).has(D)); */
-	public /*@ pure */ boolean guard_SET_DRIFT( Integer Car, Integer D) {
-		return (machine.get_cars().has(Car) && new BSet<Integer>(new Integer(0),new Integer(-1),new Integer(1)).has(D));
+		ensures \result <==> (machine.get_cars().has(Car_SET_DRIFT) && new BSet<Integer>(new Integer(0),new Integer(-1),new Integer(1)).has(D_SET_DRIFT)); */
+	public /*@ pure */ boolean guard_SET_DRIFT( Integer Car_SET_DRIFT, Integer D_SET_DRIFT) {
+		return (machine.get_cars().has(Car_SET_DRIFT) && new BSet<Integer>(new Integer(0),new Integer(-1),new Integer(1)).has(D_SET_DRIFT));
 	}
 
 	/*@ public normal_behavior
-		requires guard_SET_DRIFT(Car,D);
+		requires guard_SET_DRIFT(Car_SET_DRIFT,D_SET_DRIFT);
 		assignable machine.drift;
-		ensures guard_SET_DRIFT(Car,D) &&  machine.get_drift().equals(\old((machine.get_drift().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,D)))))); 
+		ensures guard_SET_DRIFT(Car_SET_DRIFT,D_SET_DRIFT) &&  machine.get_drift().equals(\old((machine.get_drift().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car_SET_DRIFT,D_SET_DRIFT)))))); 
 	 also
-		requires !guard_SET_DRIFT(Car,D);
+		requires !guard_SET_DRIFT(Car_SET_DRIFT,D_SET_DRIFT);
 		assignable \nothing;
 		ensures true; */
-	public void run_SET_DRIFT( Integer Car, Integer D){
-		if(guard_SET_DRIFT(Car,D)) {
+	public void run_SET_DRIFT( Integer Car_SET_DRIFT, Integer D_SET_DRIFT){
+		if(guard_SET_DRIFT(Car_SET_DRIFT,D_SET_DRIFT)) {
 			BRelation<Integer,Integer> drift_tmp = machine.get_drift();
 
-			machine.set_drift((drift_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,D)))));
+			machine.set_drift((drift_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car_SET_DRIFT,D_SET_DRIFT)))));
 
-			System.out.println("SET_DRIFT executed Car: " + Car + " D: " + D + " ");
+			System.out.println("SET_DRIFT executed Car_SET_DRIFT: " + Car_SET_DRIFT + " D_SET_DRIFT: " + D_SET_DRIFT + " ");
 		}
 	}
 

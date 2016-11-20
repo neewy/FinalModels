@@ -28,7 +28,6 @@ import static uma.roadfighter.view.Direction.UP;
 public class RoadFighterActivity extends Activity implements SensorEventListener {
 
     public RoadFighterGLView GLView;
-    private boolean isTiltChosen;
     private boolean isPhoneTiltUpward = false;
     private TextView score;
     private SensorManager mSensorManager;
@@ -40,7 +39,7 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        isTiltChosen = getIntent().getExtras().getBoolean("TILT", false);
+        boolean isTiltChosen = getIntent().getExtras().getBoolean("TILT", false);
 
         // OpenGL surface
         GLView = new RoadFighterGLView(this);
@@ -306,7 +305,7 @@ public class RoadFighterActivity extends Activity implements SensorEventListener
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
+        //not implemented yet
     }
 
     public Direction[] getRotateDirection() {
