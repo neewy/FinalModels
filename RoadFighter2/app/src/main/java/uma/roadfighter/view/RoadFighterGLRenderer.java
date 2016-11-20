@@ -76,8 +76,8 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         initializeUserCar();
         initializeScore();
 
-        generateObstacles(100);
-        generateOpponents(100);
+        generateObstacles(10);
+        generateOpponents(10);
 
         lastTime = SystemClock.uptimeMillis();
 
@@ -85,6 +85,10 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
     }
 
     public void onDrawFrame(GL10 gl) {
+
+        gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
+        gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+
         // Time
         long currentTime = SystemClock.uptimeMillis();
         long elapsed = currentTime - lastTime;
@@ -241,7 +245,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
     }
 
 
-    private void initializeOpenGl(GL10 gl) {
+    private void  initializeOpenGl(GL10 gl) {
         // OpenGL
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
@@ -284,6 +288,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         texID = new int[4];
         gl.glGenTextures(4, texID, 0);
 
+
         // Track texture
         gl.glBindTexture(GL10.GL_TEXTURE_2D, texID[0]);
         InputStream is = context.getResources().openRawResource(+R.drawable.map);
@@ -319,6 +324,9 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         gl.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_LINEAR);
         GLUtils.texImage2D(GL10.GL_TEXTURE_2D, 0, bitmap, 0);
         bitmap.recycle();
+
+        gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
+        gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
     }
 
     private void generateOpponents(int opponentsNum) {
@@ -379,7 +387,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         Integer PObj = RoadFighter.USER_LANE;
         Integer PTex = R.drawable.map;
         Integer PW = 128;
-        Integer PH = 3072;
+        Integer PH = 1536;
         Integer PX = 0;
         Integer PY = 0;
         roadFighter.evt_ADD_OBJECT.run_ADD_OBJECT(PTex, PH, PObj, PW, PX, PY);
@@ -387,7 +395,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         Integer PF = 3;
         Integer PBL = 25;
         Integer PBR = 100;
-        Integer PFL = 2850;
+        Integer PFL = 1396;
         roadFighter.evt_ADD_LANE.run_ADD_LANE(PFL, PObj, PBL, PBR, PF);
     }
 
@@ -423,6 +431,11 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
                 roadFighter.evt_SET_ZERO_VEL.run_SET_ZERO_VEL(PObj);
                 break;
         }
+    }
+
+    public boolean isNPOTSupported(GL10 gl) {
+        String extensions = gl.glGetString(GL10.GL_EXTENSIONS);
+        return extensions.indexOf("GL_OES_texture_npot") != -1;
     }
 
 }

@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "uma.roadfighter"
-        minSdkVersion 17
+        minSdkVersion 15
         targetSdkVersion 24
     }
 
