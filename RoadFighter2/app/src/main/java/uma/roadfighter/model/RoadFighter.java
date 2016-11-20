@@ -128,7 +128,7 @@ public class RoadFighter{
 		 finished.domain().equals(cars) && finished.range().isSubset(BOOL.instance) && finished.isaFunction() && BRelation.cross(cars,BOOL.instance).has(finished) &&
 		 active.domain().equals((obstacles.union(cars))) && active.range().isSubset(BOOL.instance) && active.isaFunction() && BRelation.cross((obstacles.union(cars)),BOOL.instance).has(active) &&
 		 collision.domain().equals(cars) && collision.range().isSubset(BOOL.instance) && collision.isaFunction() && BRelation.cross(cars,BOOL.instance).has(collision) &&
-		 score.domain().equals(cars) && score.range().isSubset(INT.instance) && score.isaFunction() && BRelation.cross(cars,INT.instance).has(score); */
+		 score.domain().equals(cars) && score.range().isSubset(NAT.instance) && score.isaFunction() && BRelation.cross(cars,NAT.instance).has(score); */
 
 
 	/******Getter and Mutator methods definition******/
