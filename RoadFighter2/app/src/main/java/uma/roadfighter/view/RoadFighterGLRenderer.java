@@ -115,7 +115,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         //roadFighter.evt_ADD_OBJECT.run_ADD_OBJECT(PTex, PH, PObj, PW, PX, PY);
         Integer PV = 50;
         carLow = 40;
-        carHigh = 180;
+        carHigh = 90;
         roadFighter.evt_ADD_CAR.run_ADD_CAR(PObj, PTex, PH, PW, PX, PY, PF, PV);
         //( Integer Car, Integer Desc, Integer H, Integer W, Integer X, Integer Y, Integer F, Integer M)
         Integer PS = 100000;
@@ -431,7 +431,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
                 break;
             case 'h':
                 roadFighter.evt_SET_ACC.run_SET_ACC(40, PObj);
-                roadFighter.evt_SET_VEL.run_SET_VEL(PObj,0);
+                roadFighter.evt_SET_VEL.run_SET_VEL(PObj,10);
                 roadFighter.evt_SET_MAXVEL.run_SET_MAXVEL(PObj,carHigh);
                 break;
             case 'n':
