@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="83">
+<org.eventb.core.poFile org.eventb.core.poStamp="87">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="62">
 <org.eventb.core.poIdentifier name="LANES" org.eventb.core.type="ℙ(LANES)"/>
 <org.eventb.core.poIdentifier name="OBJECTS" org.eventb.core.type="ℙ(OBJECTS)"/>
@@ -86,155 +86,156 @@
 <org.eventb.core.poIdentifier name="friction'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPright_bordes" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordes" org.eventb.core.poStamp="62"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordet" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordet" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="84">
+<org.eventb.core.poIdentifier name="B_SET_LEFT_BORDER" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Lane_SET_LEFT_BORDER" org.eventb.core.type="LANES"/>
 <org.eventb.core.poIdentifier name="left_border'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
-<org.eventb.core.poIdentifier name="B" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordet" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordet" org.eventb.core.poStamp="83">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane∈lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYK8BUifEeO2IOyripq7pQ|org.eventb.core.guard#_oKau00oPEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="B∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYK8BUifEeO2IOyripq7pQ|org.eventb.core.guard#_7FQ7EK15Eear6bRsGf7RMA"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordet" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordet" org.eventb.core.poStamp="84">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane_SET_LEFT_BORDER∈lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYK8BUifEeO2IOyripq7pQ|org.eventb.core.guard#_oKau00oPEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="B_SET_LEFT_BORDER∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYK8BUifEeO2IOyripq7pQ|org.eventb.core.guard#_7FQ7EK15Eear6bRsGf7RMA"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordeu" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordeu" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="84">
+<org.eventb.core.poIdentifier name="Lane_SET_RIGHT_BORDER" org.eventb.core.type="LANES"/>
 <org.eventb.core.poIdentifier name="right_border'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
-<org.eventb.core.poIdentifier name="B" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
+<org.eventb.core.poIdentifier name="B_SET_RIGHT_BORDER" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordeu" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordeu" org.eventb.core.poStamp="83">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane∈lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYLjFkifEeO2IOyripq7pQ|org.eventb.core.guard#_wn9OsK15Eear6bRsGf7RMA"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="B∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYLjFkifEeO2IOyripq7pQ|org.eventb.core.guard#_bdKeca9GEeaTgbbNd1bhxw"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordeu" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordeu" org.eventb.core.poStamp="84">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane_SET_RIGHT_BORDER∈lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYLjFkifEeO2IOyripq7pQ|org.eventb.core.guard#_wn9OsK15Eear6bRsGf7RMA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="B_SET_RIGHT_BORDER∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYLjFkifEeO2IOyripq7pQ|org.eventb.core.guard#_bdKeca9GEeaTgbbNd1bhxw"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordev" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordev" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="84">
+<org.eventb.core.poIdentifier name="Lane_DELETE_LANE" org.eventb.core.type="LANES"/>
 <org.eventb.core.poIdentifier name="right_border'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
 <org.eventb.core.poIdentifier name="left_border'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
 <org.eventb.core.poIdentifier name="finish_line'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
 <org.eventb.core.poIdentifier name="lanes'" org.eventb.core.type="ℙ(LANES)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordev" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordev" org.eventb.core.poStamp="83">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane∈LANES ∖ lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYJt5EifEeO2IOyripq7pQ|org.eventb.core.guard#_cYMKIUifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordev" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordev" org.eventb.core.poStamp="84">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane_DELETE_LANE∈LANES ∖ lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYJt5EifEeO2IOyripq7pQ|org.eventb.core.guard#_cYMKIUifEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordew" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordew" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="84">
+<org.eventb.core.poIdentifier name="F_SET_FINISH_LINE" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="finish_line'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
-<org.eventb.core.poIdentifier name="F" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
+<org.eventb.core.poIdentifier name="Lane_SET_FINISH_LINE" org.eventb.core.type="LANES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordew" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordew" org.eventb.core.poStamp="83">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane∈lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYKU80ifEeO2IOyripq7pQ|org.eventb.core.guard#_cYK8CEifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="F∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYKU80ifEeO2IOyripq7pQ|org.eventb.core.guard#_oKau1EoPEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordew" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordew" org.eventb.core.poStamp="84">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane_SET_FINISH_LINE∈lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYKU80ifEeO2IOyripq7pQ|org.eventb.core.guard#_cYK8CEifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="F_SET_FINISH_LINE∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYKU80ifEeO2IOyripq7pQ|org.eventb.core.guard#_oKau1EoPEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordex" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordex" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="84">
+<org.eventb.core.poIdentifier name="Y_SET_POS" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="X_SET_POS" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="X" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Obj" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Obj_SET_POS" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="posY'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Y" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordex" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordex" org.eventb.core.poStamp="83">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obj∈objects" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_cYKU9kifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="X∈ℤ∧Y∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_cYKU90ifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted) − X&gt;width(ObjExisted) ÷ 2+width(Obj) ÷ 2∨posY(ObjExisted) − Y&gt;height(ObjExisted) ÷ 2+height(Obj) ÷ 2∨X − posX(ObjExisted)&gt;width(ObjExisted) ÷ 2+width(Obj) ÷ 2∨Y − posY(ObjExisted)&gt;height(ObjExisted) ÷ 2+height(Obj) ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_cYLjEEifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted)≠X" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_ZCHsknl7EeOEpJQRb1qqLw"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordex" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordex" org.eventb.core.poStamp="84">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obj_SET_POS∈objects" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_cYKU9kifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="X_SET_POS∈ℤ∧Y_SET_POS∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_cYKU90ifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted) − X_SET_POS&gt;width(ObjExisted) ÷ 2+width(Obj_SET_POS) ÷ 2∨posY(ObjExisted) − Y_SET_POS&gt;height(ObjExisted) ÷ 2+height(Obj_SET_POS) ÷ 2∨X_SET_POS − posX(ObjExisted)&gt;width(ObjExisted) ÷ 2+width(Obj_SET_POS) ÷ 2∨Y_SET_POS − posY(ObjExisted)&gt;height(ObjExisted) ÷ 2+height(Obj_SET_POS) ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_cYLjEEifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted)≠X_SET_POS" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_ZCHsknl7EeOEpJQRb1qqLw"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordey" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordey" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="right_border'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
 <org.eventb.core.poIdentifier name="left_border'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
 <org.eventb.core.poIdentifier name="finish_line'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
-<org.eventb.core.poIdentifier name="F" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
-<org.eventb.core.poIdentifier name="Finish" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Finish_ADD_LANE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Right_ADD_LANE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="F_ADD_LANE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Left_ADD_LANE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Lane_ADD_LANE" org.eventb.core.type="LANES"/>
 <org.eventb.core.poIdentifier name="lanes'" org.eventb.core.type="ℙ(LANES)"/>
-<org.eventb.core.poIdentifier name="Right" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Left" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="friction'" org.eventb.core.type="ℙ(LANES×ℤ)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordey" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordey" org.eventb.core.poStamp="83">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane∈LANES ∖ lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYJt4EifEeO2IOyripq7pQ|org.eventb.core.guard#_cYMKIEifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Left∈ℤ∧Right∈ℤ∧Left&lt;Right" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYJt4EifEeO2IOyripq7pQ|org.eventb.core.guard#_cYKU8UifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Finish∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYJt4EifEeO2IOyripq7pQ|org.eventb.core.guard#_cYJt4kifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="F∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_RLaJkEbnEeOOI8hMiBvpak|org.eventb.core.guard#_2g6-w0b4EeO9u8H4T-Ug7g"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordey" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordey" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Lane_ADD_LANE∈LANES ∖ lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYJt4EifEeO2IOyripq7pQ|org.eventb.core.guard#_cYMKIEifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Left_ADD_LANE∈ℤ∧Right_ADD_LANE∈ℤ∧Left_ADD_LANE&lt;Right_ADD_LANE" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYJt4EifEeO2IOyripq7pQ|org.eventb.core.guard#_cYKU8UifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Finish_ADD_LANE∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_cYJt4EifEeO2IOyripq7pQ|org.eventb.core.guard#_cYJt4kifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="F_ADD_LANE∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_RLaJkEbnEeOOI8hMiBvpak|org.eventb.core.guard#_2g6-w0b4EeO9u8H4T-Ug7g"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordez" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="W" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="H" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordez" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="84">
 <org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="height'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="X" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Obj" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Y_ADD_OBJECT" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Desc_ADD_OBJECT" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="W_ADD_OBJECT" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="obj_desc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Desc" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="H_ADD_OBJECT" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="posY'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Y" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="X_ADD_OBJECT" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="width'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
+<org.eventb.core.poIdentifier name="Obj_ADD_OBJECT" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="objects'" org.eventb.core.type="ℙ(OBJECTS)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordez" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordez" org.eventb.core.poStamp="78">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obj∈OBJECTS ∖ objects∧Desc∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_HvX1oEpYEeO2IOyripq7pQ|org.eventb.core.guard#_HvX1pUpYEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="X∈ℤ∧Y∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_HvX1oEpYEeO2IOyripq7pQ|org.eventb.core.guard#_HvX1pkpYEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="W∈ℕ∧H∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_HvX1oEpYEeO2IOyripq7pQ|org.eventb.core.guard#_2MrN4HoNEeOgSc2-c1S6Jw"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted) − X&gt;width(ObjExisted) ÷ 2+W ÷ 2∨posY(ObjExisted) − Y&gt;height(ObjExisted) ÷ 2+H ÷ 2∨X − posX(ObjExisted)&gt;width(ObjExisted) ÷ 2+W ÷ 2∨X − posY(ObjExisted)&gt;height(ObjExisted) ÷ 2+H ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_HvX1oEpYEeO2IOyripq7pQ|org.eventb.core.guard#_cYH4sEifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordez" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordez" org.eventb.core.poStamp="84">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obj_ADD_OBJECT∈OBJECTS ∖ objects∧Desc_ADD_OBJECT∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_HvX1oEpYEeO2IOyripq7pQ|org.eventb.core.guard#_HvX1pUpYEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="X_ADD_OBJECT∈ℤ∧Y_ADD_OBJECT∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_HvX1oEpYEeO2IOyripq7pQ|org.eventb.core.guard#_HvX1pkpYEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="W_ADD_OBJECT∈ℕ∧H_ADD_OBJECT∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_HvX1oEpYEeO2IOyripq7pQ|org.eventb.core.guard#_2MrN4HoNEeOgSc2-c1S6Jw"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted) − X_ADD_OBJECT&gt;width(ObjExisted) ÷ 2+W_ADD_OBJECT ÷ 2∨posY(ObjExisted) − Y_ADD_OBJECT&gt;height(ObjExisted) ÷ 2+H_ADD_OBJECT ÷ 2∨X_ADD_OBJECT − posX(ObjExisted)&gt;width(ObjExisted) ÷ 2+W_ADD_OBJECT ÷ 2∨Y_ADD_OBJECT − posY(ObjExisted)&gt;height(ObjExisted) ÷ 2+H_ADD_OBJECT ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_HvX1oEpYEeO2IOyripq7pQ|org.eventb.core.guard#_cYH4sEifEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_borde{" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="D" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_borde{" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="drift'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="D_SET_DRIFT" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Car_SET_DRIFT" org.eventb.core.type="OBJECTS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_borde{" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_borde{" org.eventb.core.poStamp="78">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_SIH04ErWEeO2IOyripq7pQ|org.eventb.core.guard#_QdKSckrXEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="D∈{0,−1,1}" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_SIH04ErWEeO2IOyripq7pQ|org.eventb.core.guard#_QdK5gErXEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_borde{" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_borde{" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_SET_DRIFT∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_SIH04ErWEeO2IOyripq7pQ|org.eventb.core.guard#_QdKSckrXEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="D_SET_DRIFT∈{0,−1,1}" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_SIH04ErWEeO2IOyripq7pQ|org.eventb.core.guard#_QdK5gErXEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="ADD_CAR/invr2_1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="78">
+<org.eventb.core.poSequent name="ADD_CAR/invr2_1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="87">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTALLHYPright_borde\|"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="score∪{Car ↦ 0}∈cars∪{Car} → ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="score∪{Car_ADD_CAR ↦ 0}∈cars∪{Car_ADD_CAR} → ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_uetxAEinEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_tfiiIEfaEeORo8xmTArLno"/>
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poSequent#ADD_CAR\/invr2_1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_borde|" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_borde|" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="87">
+<org.eventb.core.poIdentifier name="H_ADD_CAR" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="cars'" org.eventb.core.type="ℙ(OBJECTS)"/>
-<org.eventb.core.poIdentifier name="W" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="H" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
+<org.eventb.core.poIdentifier name="W_ADD_CAR" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="F_ADD_CAR" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="height'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="X" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="drift'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="M" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="obj_desc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="acc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="vel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="Desc" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Y_ADD_CAR" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="posY'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="F" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Y" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="M_ADD_CAR" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="X_ADD_CAR" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Car_ADD_CAR" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="width'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="finished'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 <org.eventb.core.poIdentifier name="active'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 <org.eventb.core.poIdentifier name="objects'" org.eventb.core.type="ℙ(OBJECTS)"/>
 <org.eventb.core.poIdentifier name="maxvel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="collision'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
+<org.eventb.core.poIdentifier name="Desc_ADD_CAR" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_borde|" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_borde\|" org.eventb.core.poStamp="78">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈OBJECTS ∖ objects∧Desc∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLbXs0bnEeOOI8hMiBvpag|org.eventb.core.guard#_0I0eskoIEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="W∈ℕ∧H∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLbXs0bnEeOOI8hMiBvpag|org.eventb.core.guard#_2MuRMHoNEeOgSc2-c1S6Jw"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="X∈ℤ∧Y∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLbXs0bnEeOOI8hMiBvpag|org.eventb.core.guard#_cYIfwEifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀CarExisted⦂OBJECTS·CarExisted∈objects⇒posX(CarExisted) − X&gt;width(CarExisted) ÷ 2+W ÷ 2∨posY(CarExisted) − Y&gt;height(CarExisted) ÷ 2+H ÷ 2∨X − posX(CarExisted)&gt;width(CarExisted) ÷ 2+W ÷ 2∨Y − posY(CarExisted)&gt;height(CarExisted) ÷ 2+H ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLbXs0bnEeOOI8hMiBvpag|org.eventb.core.guard#_cYIfwUifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="M∈ℕ∧F∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_uetxAEinEeO2IOyripq7pQ|org.eventb.core.guard#__ZOxZEinEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_borde|" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_borde\|" org.eventb.core.poStamp="87">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_ADD_CAR∈OBJECTS ∖ objects∧Desc_ADD_CAR∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLbXs0bnEeOOI8hMiBvpag|org.eventb.core.guard#_0I0eskoIEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="W_ADD_CAR∈ℕ∧H_ADD_CAR∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLbXs0bnEeOOI8hMiBvpag|org.eventb.core.guard#_2MuRMHoNEeOgSc2-c1S6Jw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="X_ADD_CAR∈ℤ∧Y_ADD_CAR∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLbXs0bnEeOOI8hMiBvpag|org.eventb.core.guard#_cYIfwEifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀CarExisted⦂OBJECTS·CarExisted∈objects⇒posX(CarExisted) − X_ADD_CAR&gt;width(CarExisted) ÷ 2+W_ADD_CAR ÷ 2∨posY(CarExisted) − Y_ADD_CAR&gt;height(CarExisted) ÷ 2+H_ADD_CAR ÷ 2∨X_ADD_CAR − posX(CarExisted)&gt;width(CarExisted) ÷ 2+W_ADD_CAR ÷ 2∨Y_ADD_CAR − posY(CarExisted)&gt;height(CarExisted) ÷ 2+H_ADD_CAR ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLbXs0bnEeOOI8hMiBvpag|org.eventb.core.guard#_cYIfwUifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="M_ADD_CAR∈ℕ∧F_ADD_CAR∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_uetxAEinEeO2IOyripq7pQ|org.eventb.core.guard#__ZOxZEinEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="DELETE_CAR/invr2_1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="78">
+<org.eventb.core.poSequent name="DELETE_CAR/invr2_1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="87">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTALLHYPright_borde}"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{Car} ⩤ score∈cars ∖ {Car} → ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{Car_DELETE_CAR} ⩤ score∈cars ∖ {Car_DELETE_CAR} → ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_uetxBEinEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_tfiiIEfaEeORo8xmTArLnp"/>
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poSequent#DELETE_CAR\/invr2_1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_borde}" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_borde}" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="87">
 <org.eventb.core.poIdentifier name="cars'" org.eventb.core.type="ℙ(OBJECTS)"/>
+<org.eventb.core.poIdentifier name="Car_DELETE_CAR" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="height'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
@@ -242,7 +243,6 @@
 <org.eventb.core.poIdentifier name="obj_desc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="acc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="vel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="posY'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="width'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="finished'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
@@ -251,186 +251,185 @@
 <org.eventb.core.poIdentifier name="maxvel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="collision'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_borde}" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_borde}" org.eventb.core.poStamp="78">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLb-wUbnEeOOI8hMiBvpag|org.eventb.core.guard#_0I2T5EoIEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_borde}" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_borde}" org.eventb.core.poStamp="87">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_DELETE_CAR∈cars" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_RLb-wUbnEeOOI8hMiBvpag|org.eventb.core.guard#_0I2T5EoIEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_borde~" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="W" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="H" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_borde~" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
+<org.eventb.core.poIdentifier name="H_ADD_OBSTACLE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Desc_ADD_OBSTACLE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="W_ADD_OBSTACLE" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="height'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="X" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Obs_ADD_OBSTACLE" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="X_ADD_OBSTACLE" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="obj_desc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="obstacles'" org.eventb.core.type="ℙ(OBJECTS)"/>
-<org.eventb.core.poIdentifier name="Desc" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="posY'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Y" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="width'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="active'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
-<org.eventb.core.poIdentifier name="Obs" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="objects'" org.eventb.core.type="ℙ(OBJECTS)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_borde~" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_borde~" org.eventb.core.poStamp="81">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obs∈OBJECTS ∖ objects∧Desc∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_tenggEbnEeOOI8hMiBvpag|org.eventb.core.guard#_cYJG0EifEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="X∈ℤ∧Y∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_tenggEbnEeOOI8hMiBvpag|org.eventb.core.guard#_0I7MYkoIEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="W∈ℕ∧H∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_tenggEbnEeOOI8hMiBvpag|org.eventb.core.guard#_0I2T5UoIEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted) − X&gt;width(ObjExisted) ÷ 2+W ÷ 2∨posY(ObjExisted) − Y&gt;height(ObjExisted) ÷ 2+H ÷ 2∨X − posX(ObjExisted)&gt;width(ObjExisted) ÷ 2+W ÷ 2∨Y − posY(ObjExisted)&gt;height(ObjExisted) ÷ 2+H ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_tenggEbnEeOOI8hMiBvpag|org.eventb.core.guard#_0I7MY0oIEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈obstacles⇒posX(ObjExisted)≠X" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_uetxAkinEeO2IOyripq7pQ|org.eventb.core.guard#_IQHSgUioEeO2IOyripq7pQ"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf'" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="height'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="obj_desc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="obstacles'" org.eventb.core.type="ℙ(OBJECTS)"/>
+<org.eventb.core.poIdentifier name="Y_ADD_OBSTACLE" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="posY'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="width'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="active'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
-<org.eventb.core.poIdentifier name="Obs" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="objects'" org.eventb.core.type="ℙ(OBJECTS)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf'" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf'" org.eventb.core.poStamp="79">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obs∈obstacles" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_teoHk0bnEeOOI8hMiBvpag|org.eventb.core.guard#_ZCHskXl7EeOEpJQRb1qqLw"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_borde~" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_borde~" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obs_ADD_OBSTACLE∈OBJECTS ∖ objects∧Desc_ADD_OBSTACLE∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_tenggEbnEeOOI8hMiBvpag|org.eventb.core.guard#_cYJG0EifEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="X_ADD_OBSTACLE∈ℤ∧Y_ADD_OBSTACLE∈ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_tenggEbnEeOOI8hMiBvpag|org.eventb.core.guard#_0I7MYkoIEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="W_ADD_OBSTACLE∈ℕ∧H_ADD_OBSTACLE∈ℕ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_tenggEbnEeOOI8hMiBvpag|org.eventb.core.guard#_0I2T5UoIEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted) − X_ADD_OBSTACLE&gt;width(ObjExisted) ÷ 2+W_ADD_OBSTACLE ÷ 2∨posY(ObjExisted) − Y_ADD_OBSTACLE&gt;height(ObjExisted) ÷ 2+H_ADD_OBSTACLE ÷ 2∨X_ADD_OBSTACLE − posX(ObjExisted)&gt;width(ObjExisted) ÷ 2+W_ADD_OBSTACLE ÷ 2∨Y_ADD_OBSTACLE − posY(ObjExisted)&gt;height(ObjExisted) ÷ 2+H_ADD_OBSTACLE ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_tenggEbnEeOOI8hMiBvpag|org.eventb.core.guard#_0I7MY0oIEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈obstacles⇒posX(ObjExisted)≠X_ADD_OBSTACLE" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_uetxAkinEeO2IOyripq7pQ|org.eventb.core.guard#_IQHSgUioEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf(" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf'" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
+<org.eventb.core.poIdentifier name="height'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
+<org.eventb.core.poIdentifier name="obj_desc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
+<org.eventb.core.poIdentifier name="Obs_DELETE_OBSTACLE" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="obstacles'" org.eventb.core.type="ℙ(OBJECTS)"/>
+<org.eventb.core.poIdentifier name="posY'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
+<org.eventb.core.poIdentifier name="width'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
+<org.eventb.core.poIdentifier name="active'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
+<org.eventb.core.poIdentifier name="objects'" org.eventb.core.type="ℙ(OBJECTS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf'" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf'" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obs_DELETE_OBSTACLE∈obstacles" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_teoHk0bnEeOOI8hMiBvpag|org.eventb.core.guard#_ZCHskXl7EeOEpJQRb1qqLw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf(" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poIdentifier name="V_SET_VEL" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Car_SET_VEL" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="vel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="V" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf(" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf(" org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IQGrd0ioEeO2IOyripq7pQ|org.eventb.core.guard#_IQHSgkioEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="V∈ℕ∧V≤maxvel(Car)" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IQGrd0ioEeO2IOyripq7pQ|org.eventb.core.guard#_LYSkY0ioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf(" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf(" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_SET_VEL∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IQGrd0ioEeO2IOyripq7pQ|org.eventb.core.guard#_IQHSgkioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="V_SET_VEL∈ℕ∧V_SET_VEL≤maxvel(Car_SET_VEL)" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IQGrd0ioEeO2IOyripq7pQ|org.eventb.core.guard#_LYSkY0ioEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf)" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="A" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf)" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poIdentifier name="A_SET_ACC" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="acc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Car_SET_ACC" org.eventb.core.type="OBJECTS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf)" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf)" org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_LYSkYEioEeO2IOyripq7pQ|org.eventb.core.guard#_LYTLcEioEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="A∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_LYSkYEioEeO2IOyripq7pQ|org.eventb.core.guard#_LYTLdUioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf)" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf)" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_SET_ACC∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_LYSkYEioEeO2IOyripq7pQ|org.eventb.core.guard#_LYTLcEioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="A_SET_ACC∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_LYSkYEioEeO2IOyripq7pQ|org.eventb.core.guard#_LYTLdUioEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf*" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="M" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf*" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poIdentifier name="M_SET_MAXVEL" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Car_SET_MAXVEL" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="maxvel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf*" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf*" org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_LYTLckioEeO2IOyripq7pQ|org.eventb.core.guard#_LYTLdkioEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="M∈ℕ∧M≥vel(Car)" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_LYTLckioEeO2IOyripq7pQ|org.eventb.core.guard#_NjyLlkioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf*" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf*" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_SET_MAXVEL∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_LYTLckioEeO2IOyripq7pQ|org.eventb.core.guard#_LYTLdkioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="M_SET_MAXVEL∈ℕ∧M_SET_MAXVEL≥vel(Car_SET_MAXVEL)" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_LYTLckioEeO2IOyripq7pQ|org.eventb.core.guard#_NjyLlkioEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf+" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf+" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poIdentifier name="Car_UPDATE_VEL" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Elapsed_UPDATE_VEL" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="vel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="Elapsed" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf+" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf+" org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NjyLk0ioEeO2IOyripq7pQ|org.eventb.core.guard#_NjyLl0ioEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Elapsed∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NjyLk0ioEeO2IOyripq7pQ|org.eventb.core.guard#_NjyLmEioEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="vel(Car)+acc(Car)∗Elapsed ÷ 1000≥0" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NjyLk0ioEeO2IOyripq7pQ|org.eventb.core.guard#_IZyNsUreEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="vel(Car)+acc(Car)∗Elapsed ÷ 1000≤maxvel(Car)" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NjyLk0ioEeO2IOyripq7pQ|org.eventb.core.guard#_IZyNskreEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf+" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf+" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_UPDATE_VEL∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NjyLk0ioEeO2IOyripq7pQ|org.eventb.core.guard#_NjyLl0ioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Elapsed_UPDATE_VEL∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NjyLk0ioEeO2IOyripq7pQ|org.eventb.core.guard#_NjyLmEioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="vel(Car_UPDATE_VEL)+acc(Car_UPDATE_VEL)∗Elapsed_UPDATE_VEL ÷ 1000≥0" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NjyLk0ioEeO2IOyripq7pQ|org.eventb.core.guard#_IZyNsUreEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="vel(Car_UPDATE_VEL)+acc(Car_UPDATE_VEL)∗Elapsed_UPDATE_VEL ÷ 1000≤maxvel(Car_UPDATE_VEL)" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NjyLk0ioEeO2IOyripq7pQ|org.eventb.core.guard#_IZyNskreEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf," org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="Obj" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf," org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poIdentifier name="Elapsed_APPLY_FRICTION" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Lane_APPLY_FRICTION" org.eventb.core.type="LANES"/>
 <org.eventb.core.poIdentifier name="vel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
-<org.eventb.core.poIdentifier name="Elapsed" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Obj_APPLY_FRICTION" org.eventb.core.type="OBJECTS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf," org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf," org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obj∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_QpOSgkioEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Elapsed∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_QpOSg0ioEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Lane∈lanes" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_nitkwElCEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="acc(Obj)&lt;1" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_QpOSgEioEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="vel(Obj) − friction(Lane)∗5∗Elapsed≥0" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_EgJdBEoKEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf," org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf," org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Obj_APPLY_FRICTION∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_QpOSgkioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Elapsed_APPLY_FRICTION∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_QpOSg0ioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Lane_APPLY_FRICTION∈lanes" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_nitkwElCEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="acc(Obj_APPLY_FRICTION)&lt;1" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_QpOSgEioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="vel(Obj_APPLY_FRICTION) − friction(Lane_APPLY_FRICTION)∗5∗Elapsed_APPLY_FRICTION≥0" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_QpNrcEioEeO2IOyripq7pQ|org.eventb.core.guard#_EgJdBEoKEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf-" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf-" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
 <org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
+<org.eventb.core.poIdentifier name="Lane_CAR_RESET" org.eventb.core.type="LANES"/>
 <org.eventb.core.poIdentifier name="drift'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="acc'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.poIdentifier name="vel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
+<org.eventb.core.poIdentifier name="Car_CAR_RESET" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="collision'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf-" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf-" org.eventb.core.poStamp="83">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_oKau0EoPEeO2IOyripq7pQ|org.eventb.core.guard#_UMYVgK6jEea2fefhpSl2GQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Lane∈lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_oKau0EoPEeO2IOyripq7pQ|org.eventb.core.guard#_8Y3jIK9JEeaTgbbNd1bhxw"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf-" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf-" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_CAR_RESET∈cars" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_oKau0EoPEeO2IOyripq7pQ|org.eventb.core.guard#_UMYVgK6jEea2fefhpSl2GQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Lane_CAR_RESET∈lanes" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_oKau0EoPEeO2IOyripq7pQ|org.eventb.core.guard#_8Y3jIK9JEeaTgbbNd1bhxw"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf." org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf." org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poIdentifier name="Car_WALL_COLLISION" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Lane_WALL_COLLISION" org.eventb.core.type="LANES"/>
 <org.eventb.core.poIdentifier name="collision'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf." org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf." org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_EgJdAEoKEeO2IOyripq7pQ|org.eventb.core.guard#_EgJdA0oKEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Lane∈lanes" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_EgJdAEoKEeO2IOyripq7pQ|org.eventb.core.guard#_IOunlEoKEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf." org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf." org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_WALL_COLLISION∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_EgJdAEoKEeO2IOyripq7pQ|org.eventb.core.guard#_EgJdA0oKEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Lane_WALL_COLLISION∈lanes" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_EgJdAEoKEeO2IOyripq7pQ|org.eventb.core.guard#_IOunlEoKEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf/" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="Obj" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="MyCar" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="active'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf/" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poIdentifier name="MyCar_OBJECT_COLLISION" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Obj_OBJECT_COLLISION" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="collision'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf/" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf\/" org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="MyCar∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IOunkEoKEeO2IOyripq7pQ|org.eventb.core.guard#_IOunk0oKEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Obj∈obstacles∪cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IOunkEoKEeO2IOyripq7pQ|org.eventb.core.guard#_NhEO1UpVEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf/" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf\/" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IOunkEoKEeO2IOyripq7pQ|org.eventb.core.guard#_IOunk0oKEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈obstacles∪cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IOunkEoKEeO2IOyripq7pQ|org.eventb.core.guard#_NhEO1UpVEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf0" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.poIdentifier name="Lane" org.eventb.core.type="LANES"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf0" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
+<org.eventb.core.poIdentifier name="Car_FINISHED_LANE" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="finished'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
+<org.eventb.core.poIdentifier name="Lane_FINISHED_LANE" org.eventb.core.type="LANES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf0" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf0" org.eventb.core.poStamp="78">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_KfDEYEoKEeO2IOyripq7pQ|org.eventb.core.guard#_KfDEY0oKEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Lane∈lanes" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_KfDEYEoKEeO2IOyripq7pQ|org.eventb.core.guard#_KfDEZEoKEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf0" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf0" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_FINISHED_LANE∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_KfDEYEoKEeO2IOyripq7pQ|org.eventb.core.guard#_KfDEY0oKEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Lane_FINISHED_LANE∈lanes" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_KfDEYEoKEeO2IOyripq7pQ|org.eventb.core.guard#_KfDEZEoKEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf1" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf1" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
 <org.eventb.core.poIdentifier name="posX'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Obj" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="posY'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Elapsed" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Obj_UPDATE_POS" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Elapsed_UPDATE_POS" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf1" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf1" org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Elapsed∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NhEO0EpVEeO2IOyripq7pQ|org.eventb.core.guard#_MFozcK9JEeaTgbbNd1bhxw"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Obj∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NhEO0EpVEeO2IOyripq7pQ|org.eventb.core.guard#_yRd1UK9JEeaTgbbNd1bhxw"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf1" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf1" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Elapsed_UPDATE_POS∈ℕ" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NhEO0EpVEeO2IOyripq7pQ|org.eventb.core.guard#_MFozcK9JEeaTgbbNd1bhxw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Obj_UPDATE_POS∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_NhEO0EpVEeO2IOyripq7pQ|org.eventb.core.guard#_yRd1UK9JEeaTgbbNd1bhxw"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="UPDATE_SCORE/guardr2_3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="78">
+<org.eventb.core.poSequent name="UPDATE_SCORE/guardr2_3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="87">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTHYPright_bordf2("/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Car∈dom(score)∧score∈OBJECTS ⇸ ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_gY0kUK8_EeaTgbbNd1bhxw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Car_UPDATE_SCORE∈dom(score)∧score∈OBJECTS ⇸ ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_gY0kUK8_EeaTgbbNd1bhxw"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_gY0kUK8_EeaTgbbNd1bhxw"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTHYPright_bordf2("/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="UPDATE_SCORE/invr2_1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="78">
+<org.eventb.core.poSequent name="UPDATE_SCORE/invr2_1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="87">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTALLHYPright_bordf2"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="score{Car ↦ score(Car)+S}∈cars → ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="score{Car_UPDATE_SCORE ↦ score(Car_UPDATE_SCORE)+S_UPDATE_SCORE}∈cars → ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poSequent#UPDATE_SCORE\/invr2_1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="UPDATE_SCORE/actr2_1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="78">
+<org.eventb.core.poSequent name="UPDATE_SCORE/actr2_1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="87">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTALLHYPright_bordf2"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Car∈dom(score)∧score∈OBJECTS ⇸ ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.action#_DFmgFUpWEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Car_UPDATE_SCORE∈dom(score)∧score∈OBJECTS ⇸ ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.action#_DFmgFUpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.action#_DFmgFUpWEeO2IOyripq7pQ"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTALLHYPright_bordf2"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf2" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
-<org.eventb.core.poIdentifier name="S" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf2" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="87">
 <org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Car_UPDATE_SCORE" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="S_UPDATE_SCORE" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTHYPright_bordf2(" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf2" org.eventb.core.poStamp="78">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_DFmgE0pWEeO2IOyripq7pQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="S∈ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_BghDYK6PEeawzZTuLRre_A"/>
+<org.eventb.core.poPredicateSet name="EVTHYPright_bordf2(" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf2" org.eventb.core.poStamp="87">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_UPDATE_SCORE∈cars" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_DFmgE0pWEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="S_UPDATE_SCORE∈ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_BghDYK6PEeawzZTuLRre_A"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf2" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTHYPright_bordf2(" org.eventb.core.poStamp="78">
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="score(Car)+S∈ℕ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_gY0kUK8_EeaTgbbNd1bhxw"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf2" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTHYPright_bordf2(" org.eventb.core.poStamp="87">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="score(Car_UPDATE_SCORE)+S_UPDATE_SCORE∈ℕ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.event#_DFmgEEpWEeO2IOyripq7pQ|org.eventb.core.guard#_gY0kUK8_EeaTgbbNd1bhxw"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf3" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="78">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf3" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
 <org.eventb.core.poIdentifier name="vel'" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
-<org.eventb.core.poIdentifier name="Car" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="Car_SET_ZERO_VEL" org.eventb.core.type="OBJECTS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf3" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf3" org.eventb.core.poStamp="80">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IZxmoEreEeO2IOyripq7pQ|org.eventb.core.guard#_QpOSgUioEeO2IOyripq7pQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf3" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf3" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_SET_ZERO_VEL∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IZxmoEreEeO2IOyripq7pQ|org.eventb.core.guard#_QpOSgUioEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="78">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="score∈cars → ℤ" org.eventb.core.source="/RoadFighter/ref2_scoring.bum|org.eventb.core.machineFile#ref2_scoring|org.eventb.core.invariant#_Tb5ZEUpWEeO2IOyripq7pQ"/>
