@@ -9397,7 +9397,7 @@
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p30"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p30"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p31"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p32">
@@ -9409,7 +9409,7 @@
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p35"/>
 <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p36"/>
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p37"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p33" org.eventb.core.prHyps="p17,p29,p26,p21,p6,p22,p15,p10,p3,p2,p23,p28,p24,p20,p18,p14,p11,p16,p1,p12,p25,p7,p27,p5,p4,p19,p13,p8,p30">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p33" org.eventb.core.prHyps="p15,p29,p26,p21,p5,p22,p13,p8,p3,p2,p23,p28,p25,p20,p16,p12,p11,p14,p1,p6,p4,p10,p27,p9,p17,p18,p19,p24,p30">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -9421,8 +9421,8 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="MyCar" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.prIdent name="Obj" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.prIdent name="MyCar_OBJECT_COLLISION" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.prIdent name="Obj_OBJECT_COLLISION" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.prIdent name="acc" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.prIdent name="active" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 <org.eventb.core.prIdent name="cars" org.eventb.core.type="ℙ(OBJECTS)"/>
@@ -9446,49 +9446,49 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="collision∈cars → BOOL"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="height∈objects → ℕ"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="width∈objects → ℕ"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="MyCar∈dom(width)"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Obj∈dom(posX)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈obstacles∪cars"/>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="active{Obj_OBJECT_COLLISION ↦ bool(posX(MyCar_OBJECT_COLLISION) − posX(Obj_OBJECT_COLLISION)≥width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2∨posY(MyCar_OBJECT_COLLISION) − posY(Obj_OBJECT_COLLISION)≥height(MyCar_OBJECT_COLLISION) ÷ 2+height(Obj_OBJECT_COLLISION) ÷ 2∨posX(Obj_OBJECT_COLLISION) − posX(MyCar_OBJECT_COLLISION)≥width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2∨posY(Obj_OBJECT_COLLISION) − posY(MyCar_OBJECT_COLLISION)≥height(MyCar_OBJECT_COLLISION) ÷ 2+height(Obj_OBJECT_COLLISION) ÷ 2)}∈obstacles∪cars → BOOL"/>
 <org.eventb.core.prPred name="p34" org.eventb.core.predicate="USER_LANE∈ℤ">
 <org.eventb.core.prIdent name="USER_LANE" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="left_border∈lanes → ℤ"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="MyCar∈dom(posX)"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="posX(MyCar) − posX(Obj)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2⇒MyCar∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj∈dom(posY)∧MyCar∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj∈dom(height)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="left_border∈lanes → ℤ"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈cars"/>
 <org.eventb.core.prPred name="p31" org.eventb.core.predicate="2≠0"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="active{Obj ↦ bool(¬(posX(MyCar) − posX(Obj)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2∧posY(MyCar) − posY(Obj)&lt;height(MyCar) ÷ 2+height(Obj) ÷ 2∧posX(Obj) − posX(MyCar)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2∧posY(Obj) − posY(MyCar)&lt;height(MyCar) ÷ 2+height(Obj) ÷ 2))}∈obstacles∪cars → BOOL"/>
 <org.eventb.core.prPred name="p30" org.eventb.core.predicate="∀obstacle1⦂OBJECTS,obstacle2⦂OBJECTS·obstacle1∈obstacles∧obstacle2∈obstacles∧¬obstacle1=obstacle2⇒¬posX(obstacle1)=posX(obstacle2)"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀obstacle1⦂OBJECTS,obstacle2⦂OBJECTS·obstacle1∈obstacles∧obstacle2∈obstacles∧obstacle1≠obstacle2⇒posX(obstacle1)≠posX(obstacle2)"/>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="posY∈objects → ℤ"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀obstacle1⦂OBJECTS,obstacle2⦂OBJECTS·obstacle1∈obstacles∧obstacle2∈obstacles∧obstacle1≠obstacle2⇒posX(obstacle1)≠posX(obstacle2)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="posY∈objects → ℤ"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈dom(posX)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(posX)"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="finished∈cars → BOOL"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="MyCar∈cars"/>
 <org.eventb.core.prPred name="p35" org.eventb.core.predicate="USER_CAR∈ℤ">
 <org.eventb.core.prIdent name="USER_CAR" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="Obj∈dom(width)"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="friction∈lanes → ℕ"/>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="posX∈objects → ℤ"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="active∈obstacles∪cars → BOOL"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="obstacles⊆objects"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="maxvel∈cars → ℕ"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="friction∈lanes → ℕ"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="posX∈objects → ℤ"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="active∈obstacles∪cars → BOOL"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="obstacles⊆objects"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="maxvel∈cars → ℕ"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="objects⊆OBJECTS"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="width∈OBJECTS ⇸ ℤ"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(width)"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="width∈OBJECTS ⇸ ℤ"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈dom(width)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="acc∈cars → ℤ"/>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="active{Obj_OBJECT_COLLISION ↦ bool(¬posX(MyCar_OBJECT_COLLISION) − posX(Obj_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2∨¬posY(MyCar_OBJECT_COLLISION) − posY(Obj_OBJECT_COLLISION)&lt;height(MyCar_OBJECT_COLLISION) ÷ 2+height(Obj_OBJECT_COLLISION) ÷ 2∨¬posX(Obj_OBJECT_COLLISION) − posX(MyCar_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2∨¬posY(Obj_OBJECT_COLLISION) − posY(MyCar_OBJECT_COLLISION)&lt;height(MyCar_OBJECT_COLLISION) ÷ 2+height(Obj_OBJECT_COLLISION) ÷ 2)}∈obstacles∪cars → BOOL"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="active{Obj_OBJECT_COLLISION ↦ bool(¬(posX(MyCar_OBJECT_COLLISION) − posX(Obj_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2∧posY(MyCar_OBJECT_COLLISION) − posY(Obj_OBJECT_COLLISION)&lt;height(MyCar_OBJECT_COLLISION) ÷ 2+height(Obj_OBJECT_COLLISION) ÷ 2∧posX(Obj_OBJECT_COLLISION) − posX(MyCar_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2∧posY(Obj_OBJECT_COLLISION) − posY(MyCar_OBJECT_COLLISION)&lt;height(MyCar_OBJECT_COLLISION) ÷ 2+height(Obj_OBJECT_COLLISION) ÷ 2))}∈obstacles∪cars → BOOL"/>
 <org.eventb.core.prPred name="p21" org.eventb.core.predicate="finish_line∈lanes → ℤ"/>
 <org.eventb.core.prPred name="p37" org.eventb.core.predicate="lanes⊆LANES"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="right_border∈lanes → ℤ"/>
-<org.eventb.core.prPred name="p32" org.eventb.core.predicate="active{Obj ↦ bool(¬posX(MyCar) − posX(Obj)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2∨¬posY(MyCar) − posY(Obj)&lt;height(MyCar) ÷ 2+height(Obj) ÷ 2∨¬posX(Obj) − posX(MyCar)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2∨¬posY(Obj) − posY(MyCar)&lt;height(MyCar) ÷ 2+height(Obj) ÷ 2)}∈obstacles∪cars → BOOL"/>
-<org.eventb.core.prPred name="p33" org.eventb.core.predicate="active{Obj ↦ bool(posX(MyCar) − posX(Obj)≥width(MyCar) ÷ 2+width(Obj) ÷ 2∨posY(MyCar) − posY(Obj)≥height(MyCar) ÷ 2+height(Obj) ÷ 2∨posX(Obj) − posX(MyCar)≥width(MyCar) ÷ 2+width(Obj) ÷ 2∨posY(Obj) − posY(MyCar)≥height(MyCar) ÷ 2+height(Obj) ÷ 2)}∈obstacles∪cars → BOOL"/>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="obj_desc∈objects → ℕ"/>
-<org.eventb.core.prPred name="p24" org.eventb.core.predicate="vel∈cars → ℕ"/>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="Obj∈obstacles∪cars"/>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="posX(MyCar_OBJECT_COLLISION) − posX(Obj_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2⇒MyCar_OBJECT_COLLISION∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(posY)∧MyCar_OBJECT_COLLISION∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(height)"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="vel∈cars → ℕ"/>
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="cars∩obstacles=(∅ ⦂ ℙ(OBJECTS))"/>
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="posX∈OBJECTS ⇸ ℤ"/>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="drift∈cars → {−1,0,1}"/>
 <org.eventb.core.prPred name="p29" org.eventb.core.predicate="cars⊆objects"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="UPDATE_POS/guardr1_2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="OBJECTS">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
@@ -10381,7 +10381,7 @@
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p25">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p24"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p24"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p26"/>
@@ -10389,20 +10389,25 @@
 <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p28"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p29">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p29" org.eventb.core.prHyps="p7,p23,p19,p11,p12,p9,p13,p5,p16,p4,p3,p15,p22,p17,p10,p8,p1,p20,p6,p2,p21,p18,p24">
-<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p29" org.eventb.core.prHyps="p8,p23,p20,p13,p10,p15,p6,p18,p4,p3,p17,p22,p19,p12,p9,p1,p21,p7,p2,p11,p5,p24">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1;2;3:30000"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p30">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p30" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p30" org.eventb.core.prHyps="p6"/>
 </org.eventb.core.prAnte>
 <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p31">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="p5">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="p6">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p32">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p7,p23,p19,p12,p9,p13,p5,p16,p4,p3,p15,p22,p17,p10,p8,p1,p20,p6,p2,p21,p18,p24">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p8,p23,p20,p13,p10,p15,p6,p18,p4,p3,p17,p22,p19,p12,p9,p1,p21,p7,p2,p11,p5,p24">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1;2;3:30000"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -10413,7 +10418,7 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p33">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p33" org.eventb.core.prHyps="p7,p23,p19,p11,p12,p9,p13,p5,p16,p4,p3,p15,p22,p17,p10,p8,p1,p20,p6,p2,p21,p18,p24">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p33" org.eventb.core.prHyps="p8,p23,p20,p14,p13,p10,p15,p6,p18,p4,p3,p17,p22,p19,p12,p9,p1,p21,p7,p2,p11,p5,p24">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -10423,10 +10428,10 @@
 <org.eventb.core.prAnte name="," org.eventb.core.prGoal="p35">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
 <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p35" org.eventb.core.prHyps="p4">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p32">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p7,p23,p19,p12,p9,p13,p5,p16,p4,p3,p15,p22,p17,p10,p8,p1,p20,p6,p2,p21,p18,p24">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p8,p23,p20,p13,p10,p15,p6,p18,p4,p3,p17,p22,p19,p12,p9,p1,p21,p7,p2,p11,p5,p24">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1;2;3:30000"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -10441,20 +10446,20 @@
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p38" org.eventb.core.prHyps="p37">
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p38" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p39">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p39" org.eventb.core.prHyps="p7,p23,p19,p11,p12,p9,p13,p5,p16,p4,p3,p15,p22,p17,p10,p8,p1,p20,p6,p2,p21,p18,p24,p37">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p39" org.eventb.core.prHyps="p8,p23,p20,p14,p13,p10,p15,p6,p18,p4,p3,p17,p22,p19,p12,p9,p1,p21,p7,p2,p11,p5,p24,p37">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p40">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p40" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p40" org.eventb.core.prHyps="p18"/>
 </org.eventb.core.prAnte>
 <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p41">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p41" org.eventb.core.prHyps="p16">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p41" org.eventb.core.prHyps="p18">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p32">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p7,p23,p19,p12,p9,p13,p5,p16,p4,p3,p15,p22,p17,p10,p8,p1,p20,p6,p2,p21,p18,p24,p37">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p8,p23,p20,p13,p10,p15,p6,p18,p4,p3,p17,p22,p19,p12,p9,p1,p21,p7,p2,p11,p5,p24,p37">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1;2;3:30000"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -10465,7 +10470,7 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p42">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p42" org.eventb.core.prHyps="p7,p23,p19,p11,p12,p9,p13,p5,p16,p4,p3,p15,p22,p17,p10,p8,p1,p20,p6,p2,p21,p18,p24,p37">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p42" org.eventb.core.prHyps="p8,p23,p20,p14,p13,p10,p15,p6,p18,p4,p3,p17,p22,p19,p12,p9,p1,p21,p7,p2,p11,p5,p24,p37">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -10475,10 +10480,10 @@
 <org.eventb.core.prAnte name="," org.eventb.core.prGoal="p44">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
 <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p44" org.eventb.core.prHyps="p3">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p32">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p7,p23,p19,p12,p9,p13,p5,p16,p4,p3,p15,p22,p17,p10,p8,p1,p20,p6,p2,p21,p18,p24,p37">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p8,p23,p20,p13,p10,p15,p6,p18,p4,p3,p17,p22,p19,p12,p9,p1,p21,p7,p2,p11,p5,p24,p37">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1;2;3:30000"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -10497,8 +10502,8 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="MyCar" org.eventb.core.type="OBJECTS"/>
-<org.eventb.core.prIdent name="Obj" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.prIdent name="MyCar_OBJECT_COLLISION" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.prIdent name="Obj_OBJECT_COLLISION" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.prIdent name="acc" org.eventb.core.type="ℙ(OBJECTS×ℤ)"/>
 <org.eventb.core.prIdent name="active" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 <org.eventb.core.prIdent name="cars" org.eventb.core.type="ℙ(OBJECTS)"/>
@@ -10522,60 +10527,60 @@
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="collision∈cars → BOOL"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="height∈objects → ℕ"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="width∈objects → ℕ"/>
-<org.eventb.core.prPred name="p33" org.eventb.core.predicate="MyCar∈dom(width)"/>
-<org.eventb.core.prPred name="p31" org.eventb.core.predicate="Obj∈dom(posX)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈obstacles∪cars"/>
+<org.eventb.core.prPred name="p37" org.eventb.core.predicate="posX(MyCar_OBJECT_COLLISION) − posX(Obj_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2"/>
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="USER_LANE∈ℤ">
 <org.eventb.core.prIdent name="USER_LANE" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="left_border∈lanes → ℤ"/>
-<org.eventb.core.prPred name="p29" org.eventb.core.predicate="MyCar∈dom(posX)"/>
-<org.eventb.core.prPred name="p36" org.eventb.core.predicate="posX(MyCar) − posX(Obj)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2⇒MyCar∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj∈dom(posY)∧MyCar∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj∈dom(height)"/>
+<org.eventb.core.prPred name="p39" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(posY)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="left_border∈lanes → ℤ"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈cars"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(posX)∧posX∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(posX)∧MyCar_OBJECT_COLLISION∈dom(width)∧width∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(width)∧(posX(MyCar_OBJECT_COLLISION) − posX(Obj_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2⇒MyCar_OBJECT_COLLISION∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(posY)∧MyCar_OBJECT_COLLISION∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(height))"/>
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="∀obstacle1⦂OBJECTS,obstacle2⦂OBJECTS·obstacle1∈obstacles∧obstacle2∈obstacles∧¬obstacle1=obstacle2⇒¬posX(obstacle1)=posX(obstacle2)"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="∀obstacle1⦂OBJECTS,obstacle2⦂OBJECTS·obstacle1∈obstacles∧obstacle2∈obstacles∧obstacle1≠obstacle2⇒posX(obstacle1)≠posX(obstacle2)"/>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="MyCar∈dom(posX)∧posX∈OBJECTS ⇸ ℤ∧Obj∈dom(posX)∧MyCar∈dom(width)∧width∈OBJECTS ⇸ ℤ∧Obj∈dom(width)∧(posX(MyCar) − posX(Obj)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2⇒MyCar∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj∈dom(posY)∧MyCar∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj∈dom(height))"/>
-<org.eventb.core.prPred name="p38" org.eventb.core.predicate="MyCar∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj∈dom(posY)∧MyCar∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj∈dom(height)"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="posY∈objects → ℤ"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="finished∈cars → BOOL"/>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="MyCar∈cars"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀obstacle1⦂OBJECTS,obstacle2⦂OBJECTS·obstacle1∈obstacles∧obstacle2∈obstacles∧obstacle1≠obstacle2⇒posX(obstacle1)≠posX(obstacle2)"/>
+<org.eventb.core.prPred name="p41" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈dom(posY)"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="posY∈objects → ℤ"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈dom(posX)"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(posX)"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="finished∈cars → BOOL"/>
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="USER_CAR∈ℤ">
 <org.eventb.core.prIdent name="USER_CAR" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p35" org.eventb.core.predicate="Obj∈dom(width)"/>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈objects"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="friction∈lanes → ℕ"/>
-<org.eventb.core.prPred name="p32" org.eventb.core.predicate="Obj∈objects"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="height∈OBJECTS ⇸ ℤ"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="posX∈objects → ℤ"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="active∈obstacles∪cars → BOOL"/>
-<org.eventb.core.prPred name="p37" org.eventb.core.predicate="posX(MyCar) − posX(Obj)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="obstacles⊆objects"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="maxvel∈cars → ℕ"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="posX∈objects → ℤ"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="active∈obstacles∪cars → BOOL"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="obstacles⊆objects"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="maxvel∈cars → ℕ"/>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="objects⊆OBJECTS"/>
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="posY∈OBJECTS ⇸ ℤ"/>
+<org.eventb.core.prPred name="p42" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(height)"/>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(width)"/>
 <org.eventb.core.prPred name="p34" org.eventb.core.predicate="width∈OBJECTS ⇸ ℤ"/>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="acc∈cars → ℤ"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="MyCar∈dom(posX)∧posX∈OBJECTS ⇸ ℤ∧Obj∈dom(posX)∧MyCar∈dom(width)∧width∈OBJECTS ⇸ ℤ∧2≠0∧Obj∈dom(width)∧(posX(MyCar) − posX(Obj)&lt;width(MyCar) ÷ 2+width(Obj) ÷ 2⇒MyCar∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj∈dom(posY)∧MyCar∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj∈dom(height))"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="lanes⊆LANES"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="finish_line∈lanes → ℤ"/>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="right_border∈lanes → ℤ"/>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="obj_desc∈objects → ℕ"/>
-<org.eventb.core.prPred name="p41" org.eventb.core.predicate="Obj∈dom(posY)"/>
-<org.eventb.core.prPred name="p42" org.eventb.core.predicate="MyCar∈dom(height)"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="vel∈cars → ℕ"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="Obj∈obstacles∪cars"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="cars∩obstacles=(∅ ⦂ ℙ(OBJECTS))"/>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈dom(width)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="acc∈cars → ℤ"/>
+<org.eventb.core.prPred name="p44" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈dom(height)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(posX)∧posX∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(posX)∧MyCar_OBJECT_COLLISION∈dom(width)∧width∈OBJECTS ⇸ ℤ∧2≠0∧Obj_OBJECT_COLLISION∈dom(width)∧(posX(MyCar_OBJECT_COLLISION) − posX(Obj_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2⇒MyCar_OBJECT_COLLISION∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(posY)∧MyCar_OBJECT_COLLISION∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(height))"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="finish_line∈lanes → ℤ"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="lanes⊆LANES"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="right_border∈lanes → ℤ"/>
+<org.eventb.core.prPred name="p38" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(posY)∧MyCar_OBJECT_COLLISION∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(height)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="obj_desc∈objects → ℕ"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="posX(MyCar_OBJECT_COLLISION) − posX(Obj_OBJECT_COLLISION)&lt;width(MyCar_OBJECT_COLLISION) ÷ 2+width(Obj_OBJECT_COLLISION) ÷ 2⇒MyCar_OBJECT_COLLISION∈dom(posY)∧posY∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(posY)∧MyCar_OBJECT_COLLISION∈dom(height)∧height∈OBJECTS ⇸ ℤ∧Obj_OBJECT_COLLISION∈dom(height)"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="vel∈cars → ℕ"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="cars∩obstacles=(∅ ⦂ ℙ(OBJECTS))"/>
 <org.eventb.core.prPred name="p30" org.eventb.core.predicate="posX∈OBJECTS ⇸ ℤ"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="drift∈cars → {−1,0,1}"/>
-<org.eventb.core.prPred name="p39" org.eventb.core.predicate="MyCar∈dom(posY)"/>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="cars⊆objects"/>
-<org.eventb.core.prPred name="p44" org.eventb.core.predicate="Obj∈dom(height)"/>
 <org.eventb.core.prExpr name="e0" org.eventb.core.expression="objects"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SET_ZERO_VEL/guardr1_2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="OBJECTS">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">

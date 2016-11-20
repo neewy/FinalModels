@@ -59,8 +59,10 @@
 <org.eventb.core.psStatus name="CAR_RESET/invr1_8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="WALL_COLLISION/invr1_7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="WALL_COLLISION/actr1_1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="OBJECT_COLLISION/invr1_7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="OBJECT_COLLISION/actr1_1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="OBJECT_COLLISION/invr1_6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="106" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="OBJECT_COLLISION/invr1_7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="106" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="OBJECT_COLLISION/actr1_1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="106" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="OBJECT_COLLISION/actr1_2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="106" org.eventb.core.psManual="true"/>
 <org.eventb.core.psStatus name="UPDATE_POS/invr1_8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="UPDATE_POS/actr1_1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="UPDATE_POS/actr1_2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>

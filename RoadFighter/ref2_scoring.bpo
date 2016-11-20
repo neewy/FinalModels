@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="87">
+<org.eventb.core.poFile org.eventb.core.poStamp="88">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="62">
 <org.eventb.core.poIdentifier name="LANES" org.eventb.core.type="ℙ(LANES)"/>
 <org.eventb.core.poIdentifier name="OBJECTS" org.eventb.core.type="ℙ(OBJECTS)"/>
@@ -364,12 +364,13 @@
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Car_WALL_COLLISION∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_EgJdAEoKEeO2IOyripq7pQ|org.eventb.core.guard#_EgJdA0oKEeO2IOyripq7pQ"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Lane_WALL_COLLISION∈lanes" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_EgJdAEoKEeO2IOyripq7pQ|org.eventb.core.guard#_IOunlEoKEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf/" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicateSet name="EVTIDENTright_bordf/" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="88">
 <org.eventb.core.poIdentifier name="MyCar_OBJECT_COLLISION" org.eventb.core.type="OBJECTS"/>
+<org.eventb.core.poIdentifier name="active'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 <org.eventb.core.poIdentifier name="Obj_OBJECT_COLLISION" org.eventb.core.type="OBJECTS"/>
 <org.eventb.core.poIdentifier name="collision'" org.eventb.core.type="ℙ(OBJECTS×BOOL)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf/" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf\/" org.eventb.core.poStamp="86">
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordf/" org.eventb.core.parentSet="/RoadFighter/ref2_scoring.bpo|org.eventb.core.poFile#ref2_scoring|org.eventb.core.poPredicateSet#EVTIDENTright_bordf\/" org.eventb.core.poStamp="88">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="MyCar_OBJECT_COLLISION∈cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IOunkEoKEeO2IOyripq7pQ|org.eventb.core.guard#_IOunk0oKEeO2IOyripq7pQ"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Obj_OBJECT_COLLISION∈obstacles∪cars" org.eventb.core.source="/RoadFighter/ref1_kinectic.bum|org.eventb.core.machineFile#ref1_kinectic|org.eventb.core.event#_IOunkEoKEeO2IOyripq7pQ|org.eventb.core.guard#_NhEO1UpVEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
