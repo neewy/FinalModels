@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="62">
+<org.eventb.core.poFile org.eventb.core.poStamp="63">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="43">
 <org.eventb.core.poIdentifier name="LANES" org.eventb.core.type="ℙ(LANES)"/>
 <org.eventb.core.poIdentifier name="OBJECTS" org.eventb.core.type="ℙ(OBJECTS)"/>
@@ -555,13 +555,13 @@
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_cYLjEEifEeO2IOyripq7pQ"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTHYPright_bordey("/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="SET_POS/guard4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="62">
+<org.eventb.core.poSequent name="SET_POS/guard4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="63">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTHYPright_bordey)"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒ObjExisted∈dom(posX)∧posX∈OBJECTS ⇸ ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_ZCHsknl7EeOEpJQRb1qqLw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒ObjExisted∈dom(posY)∧posY∈OBJECTS ⇸ ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_ZCHsknl7EeOEpJQRb1qqLw"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_ZCHsknl7EeOEpJQRb1qqLw"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTHYPright_bordey)"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="SET_POS/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="62">
+<org.eventb.core.poSequent name="SET_POS/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="63">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTALLHYPright_bordey"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="posX{Obj_SET_POS ↦ X_SET_POS}∈objects → ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.invariant#_0I5-REoIEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ"/>
@@ -569,7 +569,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poSequent#SET_POS\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="SET_POS/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="62">
+<org.eventb.core.poSequent name="SET_POS/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="63">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTALLHYPright_bordey"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="posY{Obj_SET_POS ↦ Y_SET_POS}∈objects → ℤ" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.invariant#_0I6lUEoIEeO2IOyripq7pQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ"/>
@@ -591,8 +591,8 @@
 <org.eventb.core.poPredicateSet name="EVTHYPright_bordey)" org.eventb.core.parentSet="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTHYPright_bordey(" org.eventb.core.poStamp="62">
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted) − X_SET_POS&gt;width(ObjExisted) ÷ 2+width(Obj_SET_POS) ÷ 2∨posY(ObjExisted) − Y_SET_POS&gt;height(ObjExisted) ÷ 2+height(Obj_SET_POS) ÷ 2∨X_SET_POS − posX(ObjExisted)&gt;width(ObjExisted) ÷ 2+width(Obj_SET_POS) ÷ 2∨Y_SET_POS − posY(ObjExisted)&gt;height(ObjExisted) ÷ 2+height(Obj_SET_POS) ÷ 2" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_cYLjEEifEeO2IOyripq7pQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordey" org.eventb.core.parentSet="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTHYPright_bordey)" org.eventb.core.poStamp="62">
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posX(ObjExisted)≠X_SET_POS" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_ZCHsknl7EeOEpJQRb1qqLw"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPright_bordey" org.eventb.core.parentSet="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTHYPright_bordey)" org.eventb.core.poStamp="63">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀ObjExisted⦂OBJECTS·ObjExisted∈objects⇒posY(ObjExisted)≠Y_SET_POS" org.eventb.core.source="/RoadFighter/ref0_circuit.bum|org.eventb.core.machineFile#ref0_circuit|org.eventb.core.event#_0I6lU0oIEeO2IOyripq7pQ|org.eventb.core.guard#_ZCHsknl7EeOEpJQRb1qqLw"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poSequent name="ADD_LANE/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="62">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RoadFighter/ref0_circuit.bpo|org.eventb.core.poFile#ref0_circuit|org.eventb.core.poPredicateSet#EVTALLHYPright_bordez"/>

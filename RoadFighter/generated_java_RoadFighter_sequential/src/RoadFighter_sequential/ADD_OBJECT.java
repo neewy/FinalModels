@@ -17,21 +17,21 @@ public class ADD_OBJECT{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.OBJECTS.difference(machine.get_objects()).has(Obj) && NAT.instance.has(Desc) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(W) && NAT.instance.has(H) &&  (\forall Integer ObjExisted;((machine.get_objects().has(ObjExisted)) ==> ((new Integer(machine.get_posX().apply(ObjExisted) - X)).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(W / new Integer(2)))) > 0 || (new Integer(machine.get_posY().apply(ObjExisted) - Y)).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(H / new Integer(2)))) > 0 || (new Integer(X - machine.get_posX().apply(ObjExisted))).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(W / new Integer(2)))) > 0 || (new Integer(X - machine.get_posY().apply(ObjExisted))).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(H / new Integer(2)))) > 0)))); */
-	public /*@ pure */ boolean guard_ADD_OBJECT( Integer Desc, Integer H, Integer Obj, Integer W, Integer X, Integer Y) {
-		return (machine.OBJECTS.difference(machine.get_objects()).has(Obj) && NAT.instance.has(Desc) && INT.instance.has(X) && INT.instance.has(Y) && NAT.instance.has(W) && NAT.instance.has(H) && true);
+		ensures \result <==> (machine.OBJECTS.difference(machine.get_objects()).has(Obj_ADD_OBJECT) && NAT.instance.has(Desc_ADD_OBJECT) && INT.instance.has(X_ADD_OBJECT) && INT.instance.has(Y_ADD_OBJECT) && NAT.instance.has(W_ADD_OBJECT) && NAT.instance.has(H_ADD_OBJECT) &&  (\forall Integer ObjExisted;((machine.get_objects().has(ObjExisted)) ==> ((new Integer(machine.get_posX().apply(ObjExisted) - X_ADD_OBJECT)).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(W_ADD_OBJECT / new Integer(2)))) > 0 || (new Integer(machine.get_posY().apply(ObjExisted) - Y_ADD_OBJECT)).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(H_ADD_OBJECT / new Integer(2)))) > 0 || (new Integer(X_ADD_OBJECT - machine.get_posX().apply(ObjExisted))).compareTo(new Integer(new Integer(machine.get_width().apply(ObjExisted) / new Integer(2)) + new Integer(W_ADD_OBJECT / new Integer(2)))) > 0 || (new Integer(Y_ADD_OBJECT - machine.get_posY().apply(ObjExisted))).compareTo(new Integer(new Integer(machine.get_height().apply(ObjExisted) / new Integer(2)) + new Integer(H_ADD_OBJECT / new Integer(2)))) > 0)))); */
+	public /*@ pure */ boolean guard_ADD_OBJECT( Integer Desc_ADD_OBJECT, Integer H_ADD_OBJECT, Integer Obj_ADD_OBJECT, Integer W_ADD_OBJECT, Integer X_ADD_OBJECT, Integer Y_ADD_OBJECT) {
+		return (machine.OBJECTS.difference(machine.get_objects()).has(Obj_ADD_OBJECT) && NAT.instance.has(Desc_ADD_OBJECT) && INT.instance.has(X_ADD_OBJECT) && INT.instance.has(Y_ADD_OBJECT) && NAT.instance.has(W_ADD_OBJECT) && NAT.instance.has(H_ADD_OBJECT) && true);
 	}
 
 	/*@ public normal_behavior
-		requires guard_ADD_OBJECT(Desc,H,Obj,W,X,Y);
+		requires guard_ADD_OBJECT(Desc_ADD_OBJECT,H_ADD_OBJECT,Obj_ADD_OBJECT,W_ADD_OBJECT,X_ADD_OBJECT,Y_ADD_OBJECT);
 		assignable machine.objects, machine.posX, machine.posY, machine.width, machine.height, machine.obj_desc;
-		ensures guard_ADD_OBJECT(Desc,H,Obj,W,X,Y) &&  machine.get_objects().equals(\old((machine.get_objects().union(new BSet<Integer>(Obj))))) &&  machine.get_posX().equals(\old((machine.get_posX().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,X)))))) &&  machine.get_posY().equals(\old((machine.get_posY().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,Y)))))) &&  machine.get_width().equals(\old((machine.get_width().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,W)))))) &&  machine.get_height().equals(\old((machine.get_height().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,H)))))) &&  machine.get_obj_desc().equals(\old((machine.get_obj_desc().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,Desc)))))); 
+		ensures guard_ADD_OBJECT(Desc_ADD_OBJECT,H_ADD_OBJECT,Obj_ADD_OBJECT,W_ADD_OBJECT,X_ADD_OBJECT,Y_ADD_OBJECT) &&  machine.get_objects().equals(\old((machine.get_objects().union(new BSet<Integer>(Obj_ADD_OBJECT))))) &&  machine.get_posX().equals(\old((machine.get_posX().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,X_ADD_OBJECT)))))) &&  machine.get_posY().equals(\old((machine.get_posY().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,Y_ADD_OBJECT)))))) &&  machine.get_width().equals(\old((machine.get_width().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,W_ADD_OBJECT)))))) &&  machine.get_height().equals(\old((machine.get_height().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,H_ADD_OBJECT)))))) &&  machine.get_obj_desc().equals(\old((machine.get_obj_desc().union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,Desc_ADD_OBJECT)))))); 
 	 also
-		requires !guard_ADD_OBJECT(Desc,H,Obj,W,X,Y);
+		requires !guard_ADD_OBJECT(Desc_ADD_OBJECT,H_ADD_OBJECT,Obj_ADD_OBJECT,W_ADD_OBJECT,X_ADD_OBJECT,Y_ADD_OBJECT);
 		assignable \nothing;
 		ensures true; */
-	public void run_ADD_OBJECT( Integer Desc, Integer H, Integer Obj, Integer W, Integer X, Integer Y){
-		if(guard_ADD_OBJECT(Desc,H,Obj,W,X,Y)) {
+	public void run_ADD_OBJECT( Integer Desc_ADD_OBJECT, Integer H_ADD_OBJECT, Integer Obj_ADD_OBJECT, Integer W_ADD_OBJECT, Integer X_ADD_OBJECT, Integer Y_ADD_OBJECT){
+		if(guard_ADD_OBJECT(Desc_ADD_OBJECT,H_ADD_OBJECT,Obj_ADD_OBJECT,W_ADD_OBJECT,X_ADD_OBJECT,Y_ADD_OBJECT)) {
 			BSet<Integer> objects_tmp = machine.get_objects();
 			BRelation<Integer,Integer> posX_tmp = machine.get_posX();
 			BRelation<Integer,Integer> posY_tmp = machine.get_posY();
@@ -39,14 +39,14 @@ public class ADD_OBJECT{
 			BRelation<Integer,Integer> height_tmp = machine.get_height();
 			BRelation<Integer,Integer> obj_desc_tmp = machine.get_obj_desc();
 
-			machine.set_objects((objects_tmp.union(new BSet<Integer>(Obj))));
-			machine.set_posX((posX_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,X)))));
-			machine.set_posY((posY_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,Y)))));
-			machine.set_width((width_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,W)))));
-			machine.set_height((height_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,H)))));
-			machine.set_obj_desc((obj_desc_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj,Desc)))));
+			machine.set_objects((objects_tmp.union(new BSet<Integer>(Obj_ADD_OBJECT))));
+			machine.set_posX((posX_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,X_ADD_OBJECT)))));
+			machine.set_posY((posY_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,Y_ADD_OBJECT)))));
+			machine.set_width((width_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,W_ADD_OBJECT)))));
+			machine.set_height((height_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,H_ADD_OBJECT)))));
+			machine.set_obj_desc((obj_desc_tmp.union(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Obj_ADD_OBJECT,Desc_ADD_OBJECT)))));
 
-			System.out.println("ADD_OBJECT executed Desc: " + Desc + " H: " + H + " Obj: " + Obj + " W: " + W + " X: " + X + " Y: " + Y + " ");
+			System.out.println("ADD_OBJECT executed Desc_ADD_OBJECT: " + Desc_ADD_OBJECT + " H_ADD_OBJECT: " + H_ADD_OBJECT + " Obj_ADD_OBJECT: " + Obj_ADD_OBJECT + " W_ADD_OBJECT: " + W_ADD_OBJECT + " X_ADD_OBJECT: " + X_ADD_OBJECT + " Y_ADD_OBJECT: " + Y_ADD_OBJECT + " ");
 		}
 	}
 

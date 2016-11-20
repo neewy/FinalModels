@@ -17,21 +17,21 @@ public class DELETE_CAR{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> machine.get_cars().has(Car); */
-	public /*@ pure */ boolean guard_DELETE_CAR( Integer Car) {
-		return machine.get_cars().has(Car);
+		ensures \result <==> machine.get_cars().has(Car_DELETE_CAR); */
+	public /*@ pure */ boolean guard_DELETE_CAR( Integer Car_DELETE_CAR) {
+		return machine.get_cars().has(Car_DELETE_CAR);
 	}
 
 	/*@ public normal_behavior
-		requires guard_DELETE_CAR(Car);
+		requires guard_DELETE_CAR(Car_DELETE_CAR);
 		assignable machine.cars, machine.objects, machine.posX, machine.posY, machine.width, machine.height, machine.obj_desc, machine.drift, machine.vel, machine.acc, machine.maxvel, machine.finished, machine.active, machine.collision, machine.score;
-		ensures guard_DELETE_CAR(Car) &&  machine.get_cars().equals(\old(machine.get_cars().difference(new BSet<Integer>(Car)))) &&  machine.get_objects().equals(\old(machine.get_objects().difference(new BSet<Integer>(Car)))) &&  machine.get_posX().equals(\old(machine.get_posX().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_posY().equals(\old(machine.get_posY().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_width().equals(\old(machine.get_width().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_height().equals(\old(machine.get_height().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_obj_desc().equals(\old(machine.get_obj_desc().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_drift().equals(\old(machine.get_drift().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_vel().equals(\old(machine.get_vel().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_acc().equals(\old(machine.get_acc().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_maxvel().equals(\old(machine.get_maxvel().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_finished().equals(\old(machine.get_finished().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_active().equals(\old(machine.get_active().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_collision().equals(\old(machine.get_collision().domainSubtraction(new BSet<Integer>(Car)))) &&  machine.get_score().equals(\old(machine.get_score().domainSubtraction(new BSet<Integer>(Car)))); 
+		ensures guard_DELETE_CAR(Car_DELETE_CAR) &&  machine.get_cars().equals(\old(machine.get_cars().difference(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_objects().equals(\old(machine.get_objects().difference(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_posX().equals(\old(machine.get_posX().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_posY().equals(\old(machine.get_posY().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_width().equals(\old(machine.get_width().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_height().equals(\old(machine.get_height().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_obj_desc().equals(\old(machine.get_obj_desc().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_drift().equals(\old(machine.get_drift().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_vel().equals(\old(machine.get_vel().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_acc().equals(\old(machine.get_acc().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_maxvel().equals(\old(machine.get_maxvel().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_finished().equals(\old(machine.get_finished().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_active().equals(\old(machine.get_active().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_collision().equals(\old(machine.get_collision().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))) &&  machine.get_score().equals(\old(machine.get_score().domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)))); 
 	 also
-		requires !guard_DELETE_CAR(Car);
+		requires !guard_DELETE_CAR(Car_DELETE_CAR);
 		assignable \nothing;
 		ensures true; */
-	public void run_DELETE_CAR( Integer Car){
-		if(guard_DELETE_CAR(Car)) {
+	public void run_DELETE_CAR( Integer Car_DELETE_CAR){
+		if(guard_DELETE_CAR(Car_DELETE_CAR)) {
 			BSet<Integer> cars_tmp = machine.get_cars();
 			BSet<Integer> objects_tmp = machine.get_objects();
 			BRelation<Integer,Integer> posX_tmp = machine.get_posX();
@@ -48,23 +48,23 @@ public class DELETE_CAR{
 			BRelation<Integer,Boolean> collision_tmp = machine.get_collision();
 			BRelation<Integer,Integer> score_tmp = machine.get_score();
 
-			machine.set_cars(cars_tmp.difference(new BSet<Integer>(Car)));
-			machine.set_objects(objects_tmp.difference(new BSet<Integer>(Car)));
-			machine.set_posX(posX_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_posY(posY_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_width(width_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_height(height_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_obj_desc(obj_desc_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_drift(drift_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_vel(vel_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_acc(acc_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_maxvel(maxvel_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_finished(finished_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_active(active_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_collision(collision_tmp.domainSubtraction(new BSet<Integer>(Car)));
-			machine.set_score(score_tmp.domainSubtraction(new BSet<Integer>(Car)));
+			machine.set_cars(cars_tmp.difference(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_objects(objects_tmp.difference(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_posX(posX_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_posY(posY_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_width(width_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_height(height_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_obj_desc(obj_desc_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_drift(drift_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_vel(vel_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_acc(acc_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_maxvel(maxvel_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_finished(finished_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_active(active_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_collision(collision_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
+			machine.set_score(score_tmp.domainSubtraction(new BSet<Integer>(Car_DELETE_CAR)));
 
-			System.out.println("DELETE_CAR executed Car: " + Car + " ");
+			System.out.println("DELETE_CAR executed Car_DELETE_CAR: " + Car_DELETE_CAR + " ");
 		}
 	}
 

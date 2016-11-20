@@ -119,7 +119,6 @@ public class RoadFighter{
 		 width.domain().equals(objects) && width.range().isSubset(NAT.instance) && width.isaFunction() && BRelation.cross(objects,NAT.instance).has(width) &&
 		 height.domain().equals(objects) && height.range().isSubset(NAT.instance) && height.isaFunction() && BRelation.cross(objects,NAT.instance).has(height) &&
 		 obj_desc.domain().equals(objects) && obj_desc.range().isSubset(NAT.instance) && obj_desc.isaFunction() && BRelation.cross(objects,NAT.instance).has(obj_desc) &&
-		 (\forall Integer object1;  (\forall Integer object2;((objects.has(object1) && objects.has(object2) && !object1.equals(object2)) ==> ((new Integer(posX.apply(object2) - posX.apply(object1))).compareTo(new Integer(new Integer(width.apply(object2) / new Integer(2)) + new Integer(width.apply(object1) / new Integer(2)))) > 0 || (new Integer(posY.apply(object2) - posY.apply(object1))).compareTo(new Integer(new Integer(height.apply(object2) / new Integer(2)) + new Integer(height.apply(object1) / new Integer(2)))) > 0 || (new Integer(posX.apply(object1) - posX.apply(object2))).compareTo(new Integer(new Integer(width.apply(object2) / new Integer(2)) + new Integer(width.apply(object1) / new Integer(2)))) > 0 || (new Integer(posY.apply(object1) - posY.apply(object2))).compareTo(new Integer(new Integer(height.apply(object2) / new Integer(2)) + new Integer(height.apply(object1) / new Integer(2)))) > 0)))) &&
 		 drift.domain().equals(cars) && drift.range().isSubset(new BSet<Integer>(new Integer(-1),new Integer(0),new Integer(1))) && drift.isaFunction() && BRelation.cross(cars,new BSet<Integer>(new Integer(-1),new Integer(0),new Integer(1))).has(drift) &&
 		 vel.domain().equals(cars) && vel.range().isSubset(NAT.instance) && vel.isaFunction() && BRelation.cross(cars,NAT.instance).has(vel) &&
 		 acc.domain().equals(cars) && acc.range().isSubset(INT.instance) && acc.isaFunction() && BRelation.cross(cars,INT.instance).has(acc) &&
@@ -128,6 +127,8 @@ public class RoadFighter{
 		 finished.domain().equals(cars) && finished.range().isSubset(BOOL.instance) && finished.isaFunction() && BRelation.cross(cars,BOOL.instance).has(finished) &&
 		 active.domain().equals((obstacles.union(cars))) && active.range().isSubset(BOOL.instance) && active.isaFunction() && BRelation.cross((obstacles.union(cars)),BOOL.instance).has(active) &&
 		 collision.domain().equals(cars) && collision.range().isSubset(BOOL.instance) && collision.isaFunction() && BRelation.cross(cars,BOOL.instance).has(collision) &&
+		 (\forall Integer obstacle1;  (\forall Integer obstacle2;((obstacles.has(obstacle1) && obstacles.has(obstacle2) && !obstacle1.equals(obstacle2)) ==> (!posY.apply(obstacle1).equals(posY.apply(obstacle2)))))) &&
+		 (\forall Integer car;((cars.has(car)) ==> ((vel.apply(car)).compareTo(maxvel.apply(car)) <= 0))) &&
 		 score.domain().equals(cars) && score.range().isSubset(INT.instance) && score.isaFunction() && BRelation.cross(cars,INT.instance).has(score); */
 
 

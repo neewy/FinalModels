@@ -17,26 +17,26 @@ public class UPDATE_SCORE{
 	/*@ public normal_behavior
 		requires true;
  		assignable \nothing;
-		ensures \result <==> (machine.get_cars().has(Car) && INT.instance.has(S)); */
-	public /*@ pure */ boolean guard_UPDATE_SCORE( Integer Car, Integer S) {
-		return (machine.get_cars().has(Car) && INT.instance.has(S));
+		ensures \result <==> (machine.get_cars().has(Car_UPDATE_SCORE) && INT.instance.has(S_UPDATE_SCORE) && NAT.instance.has(new Integer(machine.get_score().apply(Car_UPDATE_SCORE) + S_UPDATE_SCORE))); */
+	public /*@ pure */ boolean guard_UPDATE_SCORE( Integer Car_UPDATE_SCORE, Integer S_UPDATE_SCORE) {
+		return (machine.get_cars().has(Car_UPDATE_SCORE) && INT.instance.has(S_UPDATE_SCORE) && NAT.instance.has(new Integer(machine.get_score().apply(Car_UPDATE_SCORE) + S_UPDATE_SCORE)));
 	}
 
 	/*@ public normal_behavior
-		requires guard_UPDATE_SCORE(Car,S);
+		requires guard_UPDATE_SCORE(Car_UPDATE_SCORE,S_UPDATE_SCORE);
 		assignable machine.score;
-		ensures guard_UPDATE_SCORE(Car,S) &&  machine.get_score().equals(\old((machine.get_score().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,new Integer(machine.get_score().apply(Car) + S))))))); 
+		ensures guard_UPDATE_SCORE(Car_UPDATE_SCORE,S_UPDATE_SCORE) &&  machine.get_score().equals(\old((machine.get_score().override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car_UPDATE_SCORE,new Integer(machine.get_score().apply(Car_UPDATE_SCORE) + S_UPDATE_SCORE))))))); 
 	 also
-		requires !guard_UPDATE_SCORE(Car,S);
+		requires !guard_UPDATE_SCORE(Car_UPDATE_SCORE,S_UPDATE_SCORE);
 		assignable \nothing;
 		ensures true; */
-	public void run_UPDATE_SCORE( Integer Car, Integer S){
-		if(guard_UPDATE_SCORE(Car,S)) {
+	public void run_UPDATE_SCORE( Integer Car_UPDATE_SCORE, Integer S_UPDATE_SCORE){
+		if(guard_UPDATE_SCORE(Car_UPDATE_SCORE,S_UPDATE_SCORE)) {
 			BRelation<Integer,Integer> score_tmp = machine.get_score();
 
-			machine.set_score((score_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car,new Integer(score_tmp.apply(Car) + S))))));
+			machine.set_score((score_tmp.override(new BRelation<Integer,Integer>(new Pair<Integer,Integer>(Car_UPDATE_SCORE,new Integer(score_tmp.apply(Car_UPDATE_SCORE) + S_UPDATE_SCORE))))));
 
-			System.out.println("UPDATE_SCORE executed Car: " + Car + " S: " + S + " ");
+			System.out.println("UPDATE_SCORE executed Car_UPDATE_SCORE: " + Car_UPDATE_SCORE + " S_UPDATE_SCORE: " + S_UPDATE_SCORE + " ");
 		}
 	}
 
