@@ -1,7 +1,14 @@
 package uma.roadfighter.model;
+
+import java.util.Iterator;
 import java.util.Random;
+
 import Util.Utilities;
-import eventb_prelude.*;
+import eventb_prelude.BOOL;
+import eventb_prelude.BRelation;
+import eventb_prelude.BSet;
+import eventb_prelude.Enumerated;
+import eventb_prelude.Pair;
 
 public class Test_RoadFighter{
 
@@ -16,7 +23,7 @@ public class Test_RoadFighter{
 	public Integer GenerateRandomInteger(){
 		BSet<Integer> S =  new BSet<Integer>(
 				new Enumerated(min_integer, max_integer)
-				);
+		);
 		/** User defined code that reflects axioms and theorems: Begin **/
 
 		/** User defined code that reflects axioms and theorems: End **/
@@ -83,13 +90,70 @@ public class Test_RoadFighter{
 		Test_RoadFighter test = new Test_RoadFighter();
 
 		/** User defined code that reflects axioms and theorems: Begin **/
-		random_USER_LANE = test.GenerateRandomInteger();
-		random_USER_CAR = test.GenerateRandomInteger();
-		/** User defined code that reflects axioms and theorems: End **/
+
+		//random_USER_LANE = test.GenerateRandomInteger();
+		//random_USER_CAR = test.GenerateRandomInteger();
 
 		RoadFighter machine = new RoadFighter();
+
+		/* ~~~~~ Adding a line ~~~~~ */
+		Integer Finish_ADD_LANE = 2850;
+		Integer PTex = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
+		Integer Lane_ADD_LANE = random_USER_LANE;
+		Integer Left_ADD_LANE = 25;
+		Integer Right_ADD_LANE = 100;
+		Integer F_ADD_LANE = 3;
+
+		Integer H_ADD_OBJECT = 3072;
+		Integer W_ADD_OBJECT = 128;
+		Integer X_ADD_OBJECT = 0;
+		Integer Y_ADD_OBJECT = 0;
+
+		machine.evt_ADD_OBJECT.run_ADD_OBJECT(PTex, H_ADD_OBJECT, Lane_ADD_LANE, W_ADD_OBJECT, X_ADD_OBJECT, Y_ADD_OBJECT);
+		machine.evt_ADD_LANE.run_ADD_LANE(Finish_ADD_LANE,Lane_ADD_LANE,Left_ADD_LANE,Right_ADD_LANE,F_ADD_LANE);
+		/* ^^^^^ Finished adding a line ^^^^^ */
+
+
+		/* ~~~~~ Adding a car ~~~~~ */
+		Integer Car_ADD_CAR = random_USER_CAR;
+		Integer Desc_ADD_CAR = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
+		Integer H_ADD_CAR = 25;
+		Integer W_ADD_CAR = 25;
+		Integer X_ADD_CAR = 75;
+		Integer Y_ADD_CAR = 40;
+		Integer F_ADD_CAR = 3;
+		Integer M_ADD_CAR = 38;
+
+		machine.evt_ADD_CAR.run_ADD_CAR(Car_ADD_CAR, Desc_ADD_CAR, H_ADD_CAR, W_ADD_CAR, X_ADD_CAR, Y_ADD_CAR, F_ADD_CAR, M_ADD_CAR);
+		/* ^^^^^ Finished adding a car ^^^^^ */
+
+
+		Integer Desc_ADD_OBSTACLE = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
+		Integer H_ADD_OBSTACLE = 20;
+		Integer Obs_ADD_OBSTACLE = 3;
+		Integer W_ADD_OBSTACLE = 20;
+		Integer X_ADD_OBSTACLE = 70;
+		Integer Y_ADD_OBSTACLE = 70;
+
+		machine.evt_ADD_OBSTACLE.run_ADD_OBSTACLE(Desc_ADD_OBSTACLE,H_ADD_OBSTACLE,Obs_ADD_OBSTACLE,W_ADD_OBSTACLE,X_ADD_OBSTACLE,Y_ADD_OBSTACLE);
+
+		Desc_ADD_OBSTACLE = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
+		Obs_ADD_OBSTACLE = 4;
+
+		machine.evt_ADD_OBSTACLE.run_ADD_OBSTACLE(Desc_ADD_OBSTACLE,H_ADD_OBSTACLE,Obs_ADD_OBSTACLE,W_ADD_OBSTACLE,X_ADD_OBSTACLE,Y_ADD_OBSTACLE);
+
+		Iterator<Integer> obstacles =  machine.get_obstacles().iterator();
+
+		while (obstacles.hasNext()) {
+			System.out.println("Obstacle: " + obstacles.next());
+		}
+
+
+		/** User defined code that reflects axioms and theorems: End **/
+
+
 		int n = 24; //the number of events in the machine
-		//Init values for parameters in event: SET_LEFT_BORDER
+/*		//Init values for parameters in event: SET_LEFT_BORDER
 		Integer B_SET_LEFT_BORDER = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
 		Integer Lane_SET_LEFT_BORDER = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
 
@@ -198,9 +262,9 @@ public class Test_RoadFighter{
 		Integer D_SET_DRIFT = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
 
 		//Init values for parameters in event: SET_ZERO_VEL
-		Integer Car_SET_ZERO_VEL = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
+		Integer Car_SET_ZERO_VEL = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));*/
 
-		while (true){
+		/*while (true){
 			switch (rnd.nextInt(n)){
 			case 0: if (machine.evt_SET_LEFT_BORDER.guard_SET_LEFT_BORDER(B_SET_LEFT_BORDER,Lane_SET_LEFT_BORDER))
 				machine.evt_SET_LEFT_BORDER.run_SET_LEFT_BORDER(B_SET_LEFT_BORDER,Lane_SET_LEFT_BORDER); break;
@@ -314,7 +378,7 @@ public class Test_RoadFighter{
 			Car_SET_DRIFT = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
 			D_SET_DRIFT = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
 			Car_SET_ZERO_VEL = Utilities.someVal(new BSet<Integer>((new Enumerated(1,Utilities.max_integer))));
-		}
+		}*/
 	}
 
 }

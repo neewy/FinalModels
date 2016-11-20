@@ -76,8 +76,8 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         initializeUserCar();
         initializeScore();
 
-        generateObstacles(20);
-        generateOpponents(20);
+        generateObstacles(100);
+        generateOpponents(100);
 
         lastTime = SystemClock.uptimeMillis();
 
@@ -125,7 +125,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 
         // Opponents
         for (int i = 2 + nObstacles; i < 2 + nObstacles + nOpponents; i++) {
-            if (roadFighter.get_active().apply(i)) {
+            if ((roadFighter.get_active().has(i, true) || roadFighter.get_active().has(i, false)) && roadFighter.get_active().apply(i)) {
                 PObj = i;
                 roadFighter.evt_UPDATE_VEL.run_UPDATE_VEL(PObj, PElapsed);
                 roadFighter.evt_SET_MAXVEL.run_SET_MAXVEL(PObj, roadFighter.get_maxvel().apply(PObj));
@@ -139,7 +139,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
         Integer PObj1 = RoadFighter.USER_CAR;
         // Obstacles + Opponents
         for (int i = 2; i < 2 + nObstacles + nOpponents; i++) {
-            if (roadFighter.get_active().apply(i)) {
+            if ((roadFighter.get_active().has(i, true) || roadFighter.get_active().has(i, false)) && roadFighter.get_active().apply(i)) {
                 Integer PObj2 = i;
                 roadFighter.evt_OBJECT_COLLISION.run_OBJECT_COLLISION(PObj1, PObj2);
             }
@@ -204,7 +204,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 
         // Obstacles
         for (int i = 2; i < 2 + nObstacles; i++) {
-            if (roadFighter.get_active().apply(i)) {
+            if ((roadFighter.get_active().has(i, true) || roadFighter.get_active().has(i, false)) && roadFighter.get_active().apply(i)) {
                 gl.glPushMatrix();
                 gl.glTranslatef(normalizeCoordinate(roadFighter.get_posX().apply(i)), normalizeCoordinate(roadFighter.get_posY().apply(i)), 0.0f);
                 gl.glScalef((float) roadFighter.get_width().apply(i) / (float) roadFighter.get_width().apply(RoadFighter.USER_LANE), (float) roadFighter.get_height().apply(i) / (float) roadFighter.get_width().apply(RoadFighter.USER_LANE), 1.0f);
@@ -219,7 +219,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 
         // Opponents
         for (int i = 2 + nObstacles; i < 2 + nObstacles + nOpponents; i++) {
-            if (roadFighter.get_active().apply(i)) {
+            if ((roadFighter.get_active().has(i, true) || roadFighter.get_active().has(i, false)) && roadFighter.get_active().apply(i)) {
                 gl.glPushMatrix();
                 gl.glTranslatef(normalizeCoordinate(roadFighter.get_posX().apply(i)), normalizeCoordinate(roadFighter.get_posY().apply(i)), 0.0f);
                 gl.glScalef((float) roadFighter.get_width().apply(i) / (float) roadFighter.get_width().apply(RoadFighter.USER_LANE), (float) roadFighter.get_height().apply(i) / (float) roadFighter.get_width().apply(RoadFighter.USER_LANE), 1.0f);

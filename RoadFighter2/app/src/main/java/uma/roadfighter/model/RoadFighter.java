@@ -127,7 +127,8 @@ public class RoadFighter{
 		 finished.domain().equals(cars) && finished.range().isSubset(BOOL.instance) && finished.isaFunction() && BRelation.cross(cars,BOOL.instance).has(finished) &&
 		 active.domain().equals((obstacles.union(cars))) && active.range().isSubset(BOOL.instance) && active.isaFunction() && BRelation.cross((obstacles.union(cars)),BOOL.instance).has(active) &&
 		 collision.domain().equals(cars) && collision.range().isSubset(BOOL.instance) && collision.isaFunction() && BRelation.cross(cars,BOOL.instance).has(collision) &&
-		 (\forall Integer obstacle1;  (\forall Integer obstacle2;((obstacles.has(obstacle1) && obstacles.has(obstacle2) && !obstacle1.equals(obstacle2)) ==> (!posX.apply(obstacle1).equals(posX.apply(obstacle2)))))) &&
+		 (\forall Integer obstacle1;  (\forall Integer obstacle2;((obstacles.has(obstacle1) && obstacles.has(obstacle2) && !obstacle1.equals(obstacle2)) ==> (!posY.apply(obstacle1).equals(posY.apply(obstacle2)))))) &&
+		 (\forall Integer car;((cars.has(car)) ==> ((vel.apply(car)).compareTo(maxvel.apply(car)) <= 0))) &&
 		 score.domain().equals(cars) && score.range().isSubset(INT.instance) && score.isaFunction() && BRelation.cross(cars,INT.instance).has(score); */
 
 
